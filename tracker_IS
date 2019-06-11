@@ -1,3 +1,4 @@
+# ~/Applications/sublime_text_3/sublime_text
 tracker = nuke.thisNode() 
 cornerPinOption = tracker.knob("cornerPinOptions").getValue() 
 if cornerPinOption == 0: 

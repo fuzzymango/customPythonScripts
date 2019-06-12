@@ -4,6 +4,11 @@
 #  Last Updated: June 12th, 2019
 # --------------------------------------------------------------
 
+'''
+MENU.PY
+import customTracker_IS
+nuke.addOnCreate(customTracker_IS.customTracker_IS, nodeClass='Tracker4')
+'''
 import nuke
 import nukescripts
 

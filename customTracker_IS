@@ -3,3 +3,13 @@
 tracker = nuke.selectedNode()
 tracker.knob('createCornerPin').execute()
 '''
+
+'''
+# adds a label to the selected node and runs myFunction()
+tracker = nuke.selectedNode()
+
+def myFunction():
+    print 'hello world'
+PyButton1 = nuke.PyScript_Knob('name', 'label', 'myFunction()')
+tracker.addKnob(PyButton1)
+'''

@@ -6,7 +6,7 @@ push 0
 push $cut_paste_input
 Group {
  inputs 4
- name VFX_Overlay2
+ name VFX_Overlay1
  knobChanged "\nnuke.thisNode()\['ChromeSelect'].setEnabled(nuke.thisNode()\['chromeBall'].value())\nnuke.thisNode()\['DiffuseSelect'].setEnabled(nuke.thisNode()\['diffuseBall'].value())\nnuke.thisNode()\['referenceSelect'].setEnabled(nuke.thisNode()\['refObject'].value())\nnuke.thisNode()\['Corner01'].setEnabled(nuke.thisNode()\['colourChart'].value())\nnuke.thisNode()\['Corner02'].setEnabled(nuke.thisNode()\['colourChart'].value())\nnuke.thisNode()\['Corner03'].setEnabled(nuke.thisNode()\['colourChart'].value())\nnuke.thisNode()\['Corner04'].setEnabled(nuke.thisNode()\['colourChart'].value())\n"
  tile_color 0x41a3ffff
  note_font "DejaVu Sans"
@@ -16,7 +16,7 @@ Group {
  ypos 402
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
- addUserKnob {26 break l "" +STARTLINE}
+ addUserKnob {26 break l "" -STARTLINE}
  addUserKnob {20 endGroup_1 l endGroup n -1}
  addUserKnob {12 Corner01 l "Corner 01" t "White Chart"}
  Corner01 {1225.199951 677.5999756}
@@ -26,6 +26,7 @@ Group {
  Corner03 {1433.199951 808.2000122}
  addUserKnob {12 Corner04 l "Corner 04" t "Dark Skin Chart"}
  Corner04 {1234 820.5}
+ addUserKnob {26 break_1 l "" +STARTLINE T "       "}
  addUserKnob {26 Balls l "" t "Adjust the section box to the edge of each reference ball." +STARTLINE T "Balls       "}
  addUserKnob {26 unnamed l "" -STARTLINE}
  addUserKnob {15 ChromeSelect l Chrome}
@@ -39,10 +40,10 @@ Group {
  chromeBall true
  addUserKnob {6 diffuseBall l "Diffuse ball" +STARTLINE}
  diffuseBall true
- addUserKnob {6 colourChart l "Colour chart" +STARTLINE}
- colourChart true
  addUserKnob {6 refObject l "Reference object" +STARTLINE}
  refObject true
+ addUserKnob {6 colourChart l "Colour chart" +STARTLINE}
+ colourChart true
  addUserKnob {20 overlayControls l "overlay controls"}
  addUserKnob {18 BackgroundColour l "Background Colour"}
  BackgroundColour {0 0 0}

@@ -12,8 +12,8 @@ Group {
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos 705
- ypos 402
+ xpos 1936
+ ypos 334
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" -STARTLINE}
@@ -62,6 +62,8 @@ Group {
  addUserKnob {26 ""}
  addUserKnob {12 OverlayPosition l "Offset Position"}
  addUserKnob {4 justifyOverlay l "justify overlay" M {right left "" "" "" "" ""}}
+ addUserKnob {7 scale R 0 2}
+ scale 1
 }
  BackdropNode {
   inputs 0
@@ -192,7 +194,7 @@ Group {
   xpos 2440
   ypos -172
  }
-set Ne670680 [stack 0]
+set N650828e0 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
@@ -213,7 +215,7 @@ set Ne670680 [stack 0]
  }
  Dilate {
   channels alpha
-  size {{-parent.BorderScale}}
+  size {{"-parent.BorderScale * 10"}}
   name user_dilate
   xpos 2152
   ypos -17
@@ -224,14 +226,14 @@ set Ne670680 [stack 0]
   xpos 2180
   ypos 76
  }
-push $Ne670680
+push $N650828e0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 2440
   ypos 66
@@ -260,7 +262,7 @@ push $Ne670680
   xpos 2468
   ypos 302
  }
-push $Ne670680
+push $N650828e0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -291,14 +293,14 @@ push $Ne670680
   xpos 3155
   ypos 435
  }
-set Nc457440 [stack 0]
+set N1d745d10 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
   xpos 3898
   ypos 435
  }
-set Nc45bef0 [stack 0]
+set N190b6560 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
@@ -310,7 +312,7 @@ set Nc45bef0 [stack 0]
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4978
   ypos 497
@@ -318,7 +320,7 @@ set Nc45bef0 [stack 0]
  Card2 {
   rows 1
   columns 1
-  translate {3.68 -0.205 -17}
+  translate {3.68 {DiffuseBallBox_Card.translate-1-offset.offset} -17}
   control_points {3 3 3 6 
 
 1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
@@ -332,7 +334,7 @@ set Nc45bef0 [stack 0]
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name refobject_card
   xpos 4978
-  ypos 632
+  ypos 633
   disable {{"parent.refObject == 1 ? 0 : 1"}}
  }
  TransformGeo {
@@ -343,11 +345,11 @@ set Nc45bef0 [stack 0]
   ypos 713
  }
  TransformGeo {
-  translate {0 {"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? 1 : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? 2 : 0"} 0}
+  translate {0 {"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (1 + offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (2 + 2*offset.offset) : 0"} 0}
   name TransformGeo1
   label SNAP
   xpos 4978
-  ypos 751
+  ypos 764
  }
  Input {
   inputs 0
@@ -420,7 +422,7 @@ set Nc45bef0 [stack 0]
   xpos 6110
   ypos 76
  }
-set N1628c210 [stack 0]
+set N2827d160 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
@@ -441,7 +443,7 @@ set N1628c210 [stack 0]
  }
  Dilate {
   channels alpha
-  size {{-parent.BorderScale}}
+  size {{"-parent.BorderScale * 17"}}
   name user_dilate1
   xpos 5938
   ypos 186
@@ -452,14 +454,14 @@ set N1628c210 [stack 0]
   xpos 5966
   ypos 224
  }
-push $N1628c210
+push $N2827d160
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 6076
   ypos 214
@@ -488,7 +490,7 @@ push $N1628c210
   xpos 6104
   ypos 479
  }
-push $N1628c210
+push $N2827d160
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -518,7 +520,7 @@ push $N1628c210
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 5660
   ypos 755
@@ -526,7 +528,7 @@ push $N1628c210
  Card2 {
   rows 1
   columns 1
-  translate {3.68 -1.084 -17}
+  translate {3.68 {refobject_card.translate-.855-offset.offset} -17}
   control_points {3 3 3 6 
 
 1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
@@ -539,9 +541,8 @@ push $N1628c210
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name chart_card
-  selected true
   xpos 5660
-  ypos 830
+  ypos 817
   disable {{"parent.colourChart == 0 ? 1 : 0"}}
  }
  TransformGeo {
@@ -552,7 +553,7 @@ push $N1628c210
   ypos 856
  }
  TransformGeo {
-  translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.colourChart == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.colourChart == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.colourChart == 0) ? 1 : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.colourChart == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.colourChart == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.colourChart == 0) ? 2 : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.colourChart == 0 ? 3 : 0"} 0}
+  translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (1 + offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (2 + 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (3 + 3*offset.offset) : 0"} 0}
   name TransformGeo9
   label SNAP
   xpos 5660
@@ -648,7 +649,7 @@ push $N1628c210
   xpos 3711
   ypos 16
  }
-set N1f08b290 [stack 0]
+set N63f32080 [stack 0]
  Input {
   inputs 0
   name DiffuseBall
@@ -695,13 +696,13 @@ set N1f08b290 [stack 0]
   xpos 4139
   ypos 81
  }
-push $Nc45bef0
+push $N190b6560
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4126
   ypos 530
@@ -709,7 +710,7 @@ push $Nc45bef0
  Card2 {
   rows 1
   columns 1
-  translate {3.68 0.81 -17}
+  translate {3.68 {ChromeBall_Card.translate-1-offset.offset} -17}
   control_points {3 3 3 6 
 
 1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
@@ -721,9 +722,9 @@ push $Nc45bef0
 1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
-  name DiffuseBallBox_Card1
+  name DiffuseBallBox_Card
   xpos 4126
-  ypos 604
+  ypos 605
   disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
  }
  TransformGeo {
@@ -734,13 +735,13 @@ push $Nc45bef0
   ypos 660
  }
  TransformGeo {
-  translate {0 {"parent.chromeBall == 0 ? 1 : 0"} 0}
+  translate {0 {"parent.chromeBall == 0 ? (1 + offset.offset) : 0"} 0}
   name TransformGeo5
   label SNAP
   xpos 4126
-  ypos 744
+  ypos 745
  }
-push $N1f08b290
+push $N63f32080
  Input {
   inputs 0
   name ChromeBall
@@ -787,13 +788,13 @@ push $N1f08b290
   xpos 3340
   ypos 133
  }
-push $Nc457440
+push $N1d745d10
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 3327
   ypos 538
@@ -813,9 +814,9 @@ push $Nc457440
 1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
-  name ChromeBall_Card1
+  name ChromeBall_Card
   xpos 3327
-  ypos 622
+  ypos 621
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
  TransformGeo {
@@ -831,6 +832,13 @@ push $Nc457440
   xpos 4299
   ypos 1424
  }
+ TransformGeo {
+  uniform_scale {{parent.scale}}
+  pivot {{"parent.justifyOverlay == 0 ? ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
+  name uniform_scale
+  xpos 4285
+  ypos 1549
+ }
 push 0
  ScanlineRender {
   inputs 3
@@ -844,6 +852,13 @@ push 0
   xpos 4289
   ypos 1669
  }
+ Remove {
+  operation keep
+  channels rgba
+  name Remove1
+  xpos 4288
+  ypos 1748
+ }
  Reformat {
   black_outside true
   name Reformat2
@@ -853,6 +868,16 @@ push 0
  Output {
   name Output1
   xpos 4289
-  ypos 1924
+  ypos 1970
+ }
+ NoOp {
+  inputs 0
+  name offset
+  xpos 4581
+  ypos -833
+  hide_input true
+  addUserKnob {20 User}
+  addUserKnob {7 offset}
+  offset 0.03
  }
 end_group

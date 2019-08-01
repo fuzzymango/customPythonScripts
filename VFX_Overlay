@@ -1,18 +1,15 @@
 set cut_paste_input [stack 0]
 version 10.0 v5
-push 0
-push 0
-push 0
 push $cut_paste_input
 Group {
- inputs 4
  name VFX_Overlay1
+ knobChanged "\nnuke.thisNode()\['ChromeSelect'].setEnabled(nuke.thisNode()\['chromeBall'].value())\nnuke.thisNode()\['DiffuseSelect'].setEnabled(nuke.thisNode()\['diffuseBall'].value())\nnuke.thisNode()\['referenceSelect'].setEnabled(nuke.thisNode()\['refObject'].value())\n"
  tile_color 0x41a3ffff
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos -181
- ypos 835
+ xpos -254
+ ypos -43
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" +STARTLINE}
@@ -190,7 +187,7 @@ Group {
   xpos 2440
   ypos -172
  }
-set Nd885b80 [stack 0]
+set Ne30f810 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
@@ -222,14 +219,14 @@ set Nd885b80 [stack 0]
   xpos 2180
   ypos 76
  }
-push $Nd885b80
+push $Ne30f810
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 2440
   ypos 66
@@ -258,7 +255,7 @@ push $Nd885b80
   xpos 2468
   ypos 302
  }
-push $Nd885b80
+push $Ne30f810
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -289,14 +286,14 @@ push $Nd885b80
   xpos 3155
   ypos 435
  }
-set Nd8dd310 [stack 0]
+set Ne9c7a90 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
   xpos 3898
   ypos 435
  }
-set Nd8e1bd0 [stack 0]
+set Ne9cc540 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
@@ -308,7 +305,7 @@ set Nd8e1bd0 [stack 0]
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4978
   ypos 497
@@ -418,7 +415,7 @@ set Nd8e1bd0 [stack 0]
   xpos 6110
   ypos 76
  }
-set N13fecb60 [stack 0]
+set Nea972f0 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
@@ -450,14 +447,14 @@ set N13fecb60 [stack 0]
   xpos 5966
   ypos 224
  }
-push $N13fecb60
+push $Nea972f0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 6076
   ypos 214
@@ -486,7 +483,7 @@ push $N13fecb60
   xpos 6104
   ypos 479
  }
-push $N13fecb60
+push $Nea972f0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -516,7 +513,7 @@ push $N13fecb60
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 5660
   ypos 755
@@ -645,7 +642,7 @@ push $N13fecb60
   xpos 3711
   ypos 16
  }
-set N1464ee60 [stack 0]
+set Nec13470 [stack 0]
  Input {
   inputs 0
   name DiffuseBall
@@ -692,13 +689,13 @@ set N1464ee60 [stack 0]
   xpos 4139
   ypos 81
  }
-push $Nd8e1bd0
+push $Ne9cc540
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4126
   ypos 530
@@ -737,7 +734,7 @@ push $Nd8e1bd0
   xpos 4126
   ypos 744
  }
-push $N1464ee60
+push $Nec13470
  Input {
   inputs 0
   name ChromeBall
@@ -784,13 +781,13 @@ push $N1464ee60
   xpos 3340
   ypos 133
  }
-push $Nd8dd310
+push $Ne9c7a90
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 3327
   ypos 538
@@ -841,7 +838,7 @@ push 0
   xpos 4289
   ypos 1669
  }
-set N1397e250 [stack 0]
+set Ned89f20 [stack 0]
  Reformat {
   black_outside true
   name Reformat2
@@ -853,7 +850,7 @@ set N1397e250 [stack 0]
   xpos 4289
   ypos 1924
  }
-push $N1397e250
+push $Ned89f20
  Viewer {
   frame_range 1-100
   colour_sample_bbox {0.9870370626 0.6962962747 0.9888888597 0.6981481314}

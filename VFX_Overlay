@@ -12,29 +12,29 @@ Group {
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos 1936
- ypos 334
+ xpos 34
+ ypos 281
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" -STARTLINE}
  addUserKnob {20 endGroup_1 l endGroup n -1}
  addUserKnob {12 Corner01 l "Corner 01" t "White Chart"}
- Corner01 {1225.199951 677.5999756}
+ Corner01 {1200 500}
  addUserKnob {12 Corner02 l "Corner 02" t "Black Chart"}
- Corner02 {1427.199951 670.2000122}
+ Corner02 {1400 500}
  addUserKnob {12 Corner03 l "Corner 03" t "Bluish Green Chart"}
- Corner03 {1433.199951 808.2000122}
+ Corner03 {1400 650}
  addUserKnob {12 Corner04 l "Corner 04" t "Dark Skin Chart"}
- Corner04 {1234 820.5}
+ Corner04 {1200 650}
  addUserKnob {26 break_1 l "" +STARTLINE T "       "}
  addUserKnob {26 Balls l "" t "Adjust the section box to the edge of each reference ball." +STARTLINE T "Balls       "}
  addUserKnob {26 unnamed l "" -STARTLINE}
  addUserKnob {15 ChromeSelect l Chrome}
- ChromeSelect {1366 942 1232.5 1067}
+ ChromeSelect {779 741 1029 991}
  addUserKnob {15 DiffuseSelect l Diffuse}
- DiffuseSelect {1890.5 905 1723.5 1063}
+ DiffuseSelect {1279 741 1529 991}
  addUserKnob {15 referenceSelect l Reference}
- referenceSelect {1625.949951 421.1000061 1492.449951 546.1000061}
+ referenceSelect {1767 741 2017 991}
  addUserKnob {26 OverlaySpacer l "" +STARTLINE}
  addUserKnob {6 chromeBall l "Chrome ball" +STARTLINE}
  chromeBall true
@@ -44,7 +44,7 @@ Group {
  refObject true
  addUserKnob {6 colourChart l "Colour chart" +STARTLINE}
  colourChart true
- addUserKnob {20 overlayControls l "overlay controls"}
+ addUserKnob {20 overlayControls l "Overlay Controls"}
  addUserKnob {18 BackgroundColour l "Background Colour"}
  BackgroundColour {0 0 0}
  addUserKnob {6 BackgroundColour_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
@@ -194,7 +194,7 @@ Group {
   xpos 2440
   ypos -172
  }
-set N650828e0 [stack 0]
+set Nba68640 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
@@ -226,14 +226,14 @@ set N650828e0 [stack 0]
   xpos 2180
   ypos 76
  }
-push $N650828e0
+push $Nba68640
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 2440
   ypos 66
@@ -262,7 +262,7 @@ push $N650828e0
   xpos 2468
   ypos 302
  }
-push $N650828e0
+push $Nba68640
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -293,14 +293,14 @@ push $N650828e0
   xpos 3155
   ypos 435
  }
-set N1d745d10 [stack 0]
+set Nd00bd90 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
   xpos 3898
   ypos 435
  }
-set N190b6560 [stack 0]
+set Nd0107a0 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
@@ -312,7 +312,7 @@ set N190b6560 [stack 0]
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4978
   ypos 497
@@ -422,7 +422,7 @@ set N190b6560 [stack 0]
   xpos 6110
   ypos 76
  }
-set N2827d160 [stack 0]
+set Nd11c790 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
@@ -454,14 +454,14 @@ set N2827d160 [stack 0]
   xpos 5966
   ypos 224
  }
-push $N2827d160
+push $Nd11c790
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 6076
   ypos 214
@@ -490,7 +490,7 @@ push $N2827d160
   xpos 6104
   ypos 479
  }
-push $N2827d160
+push $Nd11c790
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -520,7 +520,7 @@ push $N2827d160
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 5660
   ypos 755
@@ -649,7 +649,7 @@ push $N2827d160
   xpos 3711
   ypos 16
  }
-set N63f32080 [stack 0]
+set Nd24d5d0 [stack 0]
  Input {
   inputs 0
   name DiffuseBall
@@ -696,13 +696,13 @@ set N63f32080 [stack 0]
   xpos 4139
   ypos 81
  }
-push $N190b6560
+push $Nd0107a0
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4126
   ypos 530
@@ -741,7 +741,7 @@ push $N190b6560
   xpos 4126
   ypos 745
  }
-push $N63f32080
+push $Nd24d5d0
  Input {
   inputs 0
   name ChromeBall
@@ -788,13 +788,13 @@ push $N63f32080
   xpos 3340
   ypos 133
  }
-push $N1d745d10
+push $Nd00bd90
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 3327
   ypos 538

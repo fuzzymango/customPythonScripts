@@ -44,7 +44,9 @@ Group {
  refObject true
  addUserKnob {6 colourChart l "Colour chart" +STARTLINE}
  colourChart true
- addUserKnob {20 overlayControls l "Overlay Controls"}
+ addUserKnob {20 overlayControls l Appearence}
+ addUserKnob {26 appearence l "" +STARTLINE T "Appearence       "}
+ addUserKnob {26 break_2 l "" -STARTLINE}
  addUserKnob {18 BackgroundColour l "Background Colour"}
  BackgroundColour {0 0 0}
  addUserKnob {6 BackgroundColour_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
@@ -59,12 +61,14 @@ Group {
  BorderAlpha 1
  addUserKnob {7 BorderScale l "Border Scale Offset" R -1 1}
  addUserKnob {20 endGroup n -1}
- addUserKnob {26 ""}
+ addUserKnob {26 break_3 l "" +STARTLINE T "   "}
+ addUserKnob {26 position_line l "" +STARTLINE T "Position       "}
+ addUserKnob {26 break l "" -STARTLINE}
  addUserKnob {12 OverlayPosition l "Offset Position"}
- addUserKnob {4 position M {left right "top " bottom}}
- position "top "
  addUserKnob {7 scale R 0 2}
  scale 1
+ addUserKnob {4 position M {left right "top " bottom}}
+ position "top "
 }
  BackdropNode {
   inputs 0
@@ -105,10 +109,10 @@ Group {
   tile_color 0xafeeee01
   label "colour chart"
   note_font_size 42
-  xpos 5650
-  ypos -185
-  bdwidth 765
-  bdheight 1199
+  xpos 5406
+  ypos -169
+  bdwidth 1200
+  bdheight 1418
  }
  BackdropNode {
   inputs 0
@@ -870,7 +874,7 @@ set N1026d7f0 [stack 0]
   name TransformGeo6
   label "SNAP HORIZONTAL"
   xpos 3960
-  ypos 687
+  ypos 688
  }
  Dot {
   name Dot3
@@ -1015,7 +1019,7 @@ push $N1de3b890
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name ChromeBall_Card
   xpos 3327
-  ypos 622
+  ypos 623
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
  Switch {
@@ -1023,7 +1027,7 @@ push $N1de3b890
   which {{format_controller.which}}
   name Switch1
   xpos 3327
-  ypos 685
+  ypos 684
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
@@ -1057,7 +1061,6 @@ push $N1deee720
   uniform_scale {{parent.scale}}
   pivot {{"parent.position == 0 ? ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
   name uniform_scale_vertical
-  selected true
   xpos 4289
   ypos 1672
  }
@@ -1085,8 +1088,8 @@ push 0
   operation keep
   channels rgba
   name Remove1
-  xpos 4285
-  ypos 1995
+  xpos 4289
+  ypos 1996
  }
  Reformat {
   black_outside true
@@ -1094,47 +1097,26 @@ push 0
   xpos 4286
   ypos 2076
  }
-set N1df42d70 [stack 0]
  Output {
   name Output1
   xpos 4286
   ypos 2217
  }
- NoOp {
-  inputs 0
-  name offset
-  xpos 4581
-  ypos -833
-  hide_input true
-  addUserKnob {20 User}
-  addUserKnob {7 offset}
-  offset 0.03
- }
-push $N1df42d70
- Viewer {
-  frame_range 1-100
-  viewerProcess "Rec.709 1886 (FS)"
-  name Viewer1
-  xpos 4286
-  ypos 2102
-  addUserKnob {20 Lock}
-  addUserKnob {6 lock_all_buffers l "lock all buffers" -STARTLINE}
-  addUserKnob {6 lock_buffer_1 l "lock buffer 1" +STARTLINE}
-  addUserKnob {6 lock_buffer_2 l "lock buffer 2" +STARTLINE}
-  addUserKnob {6 lock_buffer_3 l "lock buffer 3" +STARTLINE}
-  addUserKnob {6 lock_buffer_4 l "lock buffer 4" +STARTLINE}
-  addUserKnob {6 lock_buffer_5 l "lock buffer 5" +STARTLINE}
-  addUserKnob {6 lock_buffer_6 l "lock buffer 6" +STARTLINE}
-  addUserKnob {6 lock_buffer_7 l "lock buffer 7" +STARTLINE}
-  addUserKnob {6 lock_buffer_8 l "lock buffer 8" +STARTLINE}
-  addUserKnob {6 lock_buffer_9 l "lock buffer 9" +STARTLINE}
-  addUserKnob {6 lock_buffer_0 l "lock buffer 0" +STARTLINE}
- }
  Switch {
   inputs 0
   which {{"parent.position == 0 ? 0 : parent.position == 1 ? 0 : 1"}}
   name format_controller
-  xpos 4285
-  ypos -842
+  xpos 4236
+  ypos -804
+ }
+ NoOp {
+  inputs 0
+  name offset
+  xpos 4581
+  ypos -832
+  hide_input true
+  addUserKnob {20 User}
+  addUserKnob {7 offset}
+  offset 0.03
  }
 end_group

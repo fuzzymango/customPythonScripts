@@ -12,8 +12,8 @@ Group {
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos 34
- ypos 281
+ xpos 189
+ ypos 285
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" -STARTLINE}
@@ -61,6 +61,7 @@ Group {
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 ""}
  addUserKnob {12 OverlayPosition l "Offset Position"}
+ addUserKnob {4 overlayFormat l "overlay format " M {vertical horizontal}}
  addUserKnob {4 justifyOverlay l "justify overlay" M {right left "" "" "" "" ""}}
  addUserKnob {7 scale R 0 2}
  scale 1
@@ -194,7 +195,7 @@ Group {
   xpos 2440
   ypos -172
  }
-set Nba68640 [stack 0]
+set Nc9e3ff0 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
@@ -226,14 +227,14 @@ set Nba68640 [stack 0]
   xpos 2180
   ypos 76
  }
-push $Nba68640
+push $Nc9e3ff0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 2440
   ypos 66
@@ -262,7 +263,7 @@ push $Nba68640
   xpos 2468
   ypos 302
  }
-push $Nba68640
+push $Nc9e3ff0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -293,14 +294,14 @@ push $Nba68640
   xpos 3155
   ypos 435
  }
-set Nd00bd90 [stack 0]
+set Ncaa6c70 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
   xpos 3898
   ypos 435
  }
-set Nd0107a0 [stack 0]
+set Ncaab720 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
@@ -312,11 +313,30 @@ set Nd0107a0 [stack 0]
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4978
   ypos 497
  }
+set Ncab4a10 [stack 0]
+ Card2 {
+  translate {{"DiffuseBallBox_Card_horiz.translate + 1 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name refobject_card_horiz
+  xpos 4812
+  ypos 640
+ }
+push $Ncab4a10
  Card2 {
   rows 1
   columns 1
@@ -336,6 +356,13 @@ set Nd0107a0 [stack 0]
   xpos 4978
   ypos 633
   disable {{"parent.refObject == 1 ? 0 : 1"}}
+ }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch3
+  xpos 4978
+  ypos 671
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
@@ -422,7 +449,7 @@ set Nd0107a0 [stack 0]
   xpos 6110
   ypos 76
  }
-set Nd11c790 [stack 0]
+set Ncb77ed0 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
@@ -454,14 +481,14 @@ set Nd11c790 [stack 0]
   xpos 5966
   ypos 224
  }
-push $Nd11c790
+push $Ncb77ed0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 6076
   ypos 214
@@ -490,7 +517,7 @@ push $Nd11c790
   xpos 6104
   ypos 479
  }
-push $Nd11c790
+push $Ncb77ed0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -520,11 +547,31 @@ push $Nd11c790
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 5660
   ypos 755
  }
+set Ncc2ac90 [stack 0]
+ Card2 {
+  translate {{"refobject_card_horiz.translate + 1.2 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
+  uniform_scale 1.4
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name chart_card_horiz
+  xpos 5477
+  ypos 841
+ }
+push $Ncc2ac90
  Card2 {
   rows 1
   columns 1
@@ -545,19 +592,26 @@ push $Nd11c790
   ypos 817
   disable {{"parent.colourChart == 0 ? 1 : 0"}}
  }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch4
+  xpos 5660
+  ypos 896
+ }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo4
   label GUI
   xpos 5660
-  ypos 856
+  ypos 958
  }
  TransformGeo {
   translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (1 + offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (2 + 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (3 + 3*offset.offset) : 0"} 0}
   name TransformGeo9
   label SNAP
   xpos 5660
-  ypos 894
+  ypos 996
  }
  Roto {
   inputs 0
@@ -649,7 +703,7 @@ push $Nd11c790
   xpos 3711
   ypos 16
  }
-set Nd24d5d0 [stack 0]
+set Ncca8d20 [stack 0]
  Input {
   inputs 0
   name DiffuseBall
@@ -696,17 +750,36 @@ set Nd24d5d0 [stack 0]
   xpos 4139
   ypos 81
  }
-push $Nd0107a0
+push $Ncaab720
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4126
   ypos 530
  }
+set Ncd467f0 [stack 0]
+ Card2 {
+  translate {{"ChromeBall_Card_horiz.translate + 1 +  offset.offset"} {ChromeBall_Card_horiz.translate} -17}
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name DiffuseBallBox_Card_horiz
+  xpos 3960
+  ypos 634
+ }
+push $Ncd467f0
  Card2 {
   rows 1
   columns 1
@@ -724,24 +797,31 @@ push $Nd0107a0
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name DiffuseBallBox_Card
   xpos 4126
-  ypos 605
+  ypos 603
   disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
+ }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch2
+  xpos 4126
+  ypos 664
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo3
   label GUI
   xpos 4126
-  ypos 660
+  ypos 724
  }
  TransformGeo {
   translate {0 {"parent.chromeBall == 0 ? (1 + offset.offset) : 0"} 0}
   name TransformGeo5
   label SNAP
   xpos 4126
-  ypos 745
+  ypos 814
  }
-push $Nd24d5d0
+push $Ncca8d20
  Input {
   inputs 0
   name ChromeBall
@@ -788,17 +868,36 @@ push $Nd24d5d0
   xpos 3340
   ypos 133
  }
-push $Nd00bd90
+push $Ncaa6c70
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 3327
   ypos 538
  }
+set Ncdf2b40 [stack 0]
+ Card2 {
+  translate {0 1.81 -17}
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name ChromeBall_Card_horiz
+  xpos 3156
+  ypos 629
+ }
+push $Ncdf2b40
  Card2 {
   rows 1
   columns 1
@@ -816,15 +915,22 @@ push $Nd00bd90
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name ChromeBall_Card
   xpos 3327
-  ypos 621
+  ypos 622
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
+ }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch1
+  xpos 3327
+  ypos 685
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo2
   label GUI
   xpos 3327
-  ypos 686
+  ypos 737
  }
  Scene {
   inputs 4
@@ -865,6 +971,7 @@ push 0
   xpos 4289
   ypos 1829
  }
+set Ncea5090 [stack 0]
  Output {
   name Output1
   xpos 4289
@@ -879,5 +986,25 @@ push 0
   addUserKnob {20 User}
   addUserKnob {7 offset}
   offset 0.03
+ }
+push $Ncea5090
+ Viewer {
+  frame_range 1-100
+  viewerProcess "Rec.709 1886 (FS)"
+  name Viewer1
+  xpos 4289
+  ypos 1855
+  addUserKnob {20 Lock}
+  addUserKnob {6 lock_all_buffers l "lock all buffers" -STARTLINE}
+  addUserKnob {6 lock_buffer_1 l "lock buffer 1" +STARTLINE}
+  addUserKnob {6 lock_buffer_2 l "lock buffer 2" +STARTLINE}
+  addUserKnob {6 lock_buffer_3 l "lock buffer 3" +STARTLINE}
+  addUserKnob {6 lock_buffer_4 l "lock buffer 4" +STARTLINE}
+  addUserKnob {6 lock_buffer_5 l "lock buffer 5" +STARTLINE}
+  addUserKnob {6 lock_buffer_6 l "lock buffer 6" +STARTLINE}
+  addUserKnob {6 lock_buffer_7 l "lock buffer 7" +STARTLINE}
+  addUserKnob {6 lock_buffer_8 l "lock buffer 8" +STARTLINE}
+  addUserKnob {6 lock_buffer_9 l "lock buffer 9" +STARTLINE}
+  addUserKnob {6 lock_buffer_0 l "lock buffer 0" +STARTLINE}
  }
 end_group

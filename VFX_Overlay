@@ -12,8 +12,8 @@ Group {
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos 189
- ypos 285
+ xpos 20
+ ypos 39
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" -STARTLINE}
@@ -61,10 +61,8 @@ Group {
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 ""}
  addUserKnob {12 OverlayPosition l "Offset Position"}
- addUserKnob {4 overlayFormat l "overlay format " M {vertical horizontal}}
- overlayFormat horizontal
- addUserKnob {4 justifyOverlay l "justify overlay" M {right left "" "" "" "" ""}}
- justifyOverlay left
+ addUserKnob {4 position M {left right "top " bottom}}
+ position "top "
  addUserKnob {7 scale R 0 2}
  scale 1
 }
@@ -125,7 +123,7 @@ Group {
  }
  Camera2 {
   inputs 0
-  translate {{"parent.justifyOverlay == 0 ? 0 : 3.82"} 0 0}
+  translate {{3.82} {"parent.position == 3 ? 3.63 : 0"} 0}
   haperture 24.89
   vaperture 18.66
   name Camera2
@@ -138,12 +136,12 @@ Group {
  }
  Camera2 {
   inputs 0
-  translate {{"parent.justifyOverlay == 0 ? 0 : 7.36"} 0 0}
+  translate {{"parent.position == 0 ? 7.36 : 0"} 0 0}
   haperture 24.89
   vaperture 18.66
   name Camera1
   label VERTICAL
-  xpos 4572
+  xpos 4484
   ypos 1775
   addUserKnob {20 Framestore}
   addUserKnob {68 filmback l "Change filmback to:" M {"0\tCustom" "1\tFilm/35mm/2 perf 1.78" "2\tFilm/35mm/2 perf 2.40 v1" "3\tFilm/35mm/2 perf 2.40 v2" "4\tFilm/35mm/3 perf 1.78" "5\tFilm/35mm/4 perf 1.33 TV Safe" "6\tFilm/35mm/4 perf 1.33 Large TV Transmit" "7\tFilm/35mm/4 perf 1.78" "8\tFilm/35mm/4 perf 1.85 Extract" "9\tFilm/35mm/4 perf 1.85 Projection" "10\tFilm/35mm/4 perf 2.40 Anamorphic Projection" "11\tFilm/35mm/4 perf 2.40 Extract" "12\tFilm/16mm 1.37" "13\tFilm/Super 16mm 1.66" "14\tFilm/Super 16mm 1.85" "15\tFilm/35mm Full Frame" "16\tFilm/65mm 2.20" "17\tFilm/Panavision Super 70mm" "18\tFilm/70mm Extract 2.40" "19\tFilm/70mm Imax" "20\tFilm/Academy" "21\tFilm/Super35" "22\tArri/D21 1.33" "23\tArri/D21 1.78" "24\tArri/D21 1.85" "25\tArri/D21 2.40" "26\tArri/Alexa 16:9 1.78" "27\tArri/Alexa 16:9 1.85" "28\tArri/Alexa 16:9 2.39 Scope 2x" "29\tArri/Alexa 16:9 2.39 Flat" "30\tArri/Alexa 4:3 1.33" "31\tArri/Alexa 4:3 1.78" "32\tArri/Alexa 4:3 1.85" "33\tArri/Alexa 4:3 2.39 Scope 2x" "34\tArri/Alexa 4:3 2.39 Flat" "35\tBlack Magic/Pocket Cinema Camera" "36\tBlack Magic/Cinema Camera 2k" "37\tBlack Magic/Production Camera 4k" "38\tCanon/DSLR/M Still" "39\tCanon/DSLR/M Video" "40\tCanon/DSLR/1D MKIV Still" "41\tCanon/DSLR/1D MKIV Video" "42\tCanon/DSLR/1DX Still" "43\tCanon/DSLR/1DX Video" "44\tCanon/DSLR/5D MKII+III Still" "45\tCanon/DSLR/5D MKII+III Video" "46\tCanon/DSLR/6D Still" "47\tCanon/DSLR/6D Video" "48\tCanon/DSLR/7D Still" "49\tCanon/DSLR/7D Video" "50\tCanon/DSLR/60D Still" "51\tCanon/DSLR/60D Video" "52\tCanon/DSLR/70D Still" "53\tCanon/DSLR/70D Video" "54\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Still" "55\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Video" "56\tCanon/1DC Still" "57\tCanon/1DC Video" "58\tCanon/C100" "59\tCanon/C300" "60\tCanon/C500" "61\tCanon/XL1 4:3" "62\tCanon/XL1 16:9" "63\tCanon/XL2 4:3" "64\tCanon/XL2 16:9" "65\tNikon/DSLR/D4 FX Still" "66\tNikon/DSLR/D4 1.2x Still" "67\tNikon/DSLR/D4 DX Still" "68\tNikon/DSLR/D4 5:4 Still" "69\tNikon/DSLR/D90 Still" "70\tNikon/DSLR/D300S Still" "71\tNikon/DSLR/D600 FX Still" "72\tNikon/DSLR/D600 DX Still" "73\tNikon/DSLR/D700 FX Still" "74\tNikon/DSLR/D700 DX Still" "75\tNikon/DSLR/D800 FX Still" "76\tNikon/DSLR/D800 1.2x Still" "77\tNikon/DSLR/D800 DX Still" "78\tNikon/DSLR/D800 5:4 Still" "79\tNikon/DSLR/D3100 DX Still" "80\tNikon/DSLR/D3200 DX Still" "81\tNikon/DSLR/D5100 DX Still" "82\tNikon/DSLR/D7000 DX Still" "83\tPhantom/65 4k" "84\tPhantom/65 4k 16:9" "85\tPhantom/65 UHD" "86\tPhantom/65 2k Square" "87\tPhantom/65 2k 1.85" "88\tPhantom/65 2k 2.35" "89\tPhantom/65 1080p" "90\tPhantom/65 1632x1200" "91\tPhantom/65 720p" "92\tPhantom/65 1152x896" "93\tPhantom/65 800x600" "94\tPhantom/65 640x480" "95\tPhantom/65 512x512" "96\tPhantom/65 256x256" "97\tPhantom/Flex 2.5k" "98\tPhantom/Flex 1080p" "99\tPhantom/Flex 720p" "100\tPhantom/Flex 640x480" "101\tPhantom/HD Gold 2k Square" "102\tPhantom/HD Gold 2k 1.85" "103\tPhantom/HD Gold 2k 2.35" "104\tPhantom/HD Gold 1080p" "105\tPhantom/HD Gold 720p" "106\tPhantom/HD Gold 1152x896" "107\tPhantom/HD Gold 800x600" "108\tPhantom/HD Gold 640x480" "109\tPhantom/HD Gold 512x512" "110\tRed/One/4.5k" "111\tRed/One/4k 16:9" "112\tRed/One/4k 2:1" "113\tRed/One/4k HD" "114\tRed/One/4k Anamorphic" "115\tRed/One/3k 16:9" "116\tRed/One/3k 2:1" "117\tRed/One/2k 16:9" "118\tRed/One/2k 2:1" "119\tRed/Epic/5k" "120\tRed/Epic/5k 2:1" "121\tRed/Epic/5k HD" "122\tRed/Epic/5k ANA" "123\tRed/Epic/5k WS" "124\tRed/Epic/4k" "125\tRed/Epic/4k HD" "126\tRed/Epic/3k" "127\tRed/Epic/3k HD" "128\tRed/Epic/2k" "129\tRed/Epic/2k HD" "130\tRed/Epic/2k WS" "131\tRed/Epic/1k HD" "132\tRed/Epic/1k WS" "133\tRed/Epic Dragon/6k Full" "134\tRed/Epic Dragon/6k FF3" "135\tRed/Epic Dragon/5.5k Full" "136\tRed/Epic Dragon/5k Full" "137\tRed/Epic Dragon/4k Full" "138\tRed/Epic Dragon/3k Full" "139\tRed/Epic Dragon/2k Full" "140\tRed/Epic Dragon/1k Full" "141\tSony/DSLR/APS-C A37" "142\tSony/DSLR/APS-C A57" "143\tSony/DSLR/APS-C A58" "144\tSony/DSLR/APS-C A65" "145\tSony/DSLR/APS-C A77" "146\tSony/DSLR/APS-C A3000" "147\tSony/DSLR/Full Frame A99" "148\tSony/DSLR/Mirrorless A7" "149\tSony/DSLR/NEX-6" "150\tSony/DSLR/SLT-A37" "151\tSony/DSLR/SLT-A57" "152\tSony/DSLR/SLT-A99" "153\tSony/DSR-400" "154\tSony/EX1" "155\tSony/F3" "156\tSony/FS100U" "157\tSony/FS700" "158\tSony/F35 1.78" "159\tSony/F35 1.85" "160\tSony/F35 2.39" "161\tSony/F55" "162\tSony/F5" "163\tSony/F65"}}
@@ -151,7 +149,7 @@ Group {
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch5
   xpos 4585
   ypos 1916
@@ -218,7 +216,7 @@ Group {
   xpos 2440
   ypos -172
  }
-set Nc9e3ff0 [stack 0]
+set Nee1b4a0 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
@@ -250,14 +248,14 @@ set Nc9e3ff0 [stack 0]
   xpos 2180
   ypos 76
  }
-push $Nc9e3ff0
+push $Nee1b4a0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 2440
   ypos 66
@@ -286,7 +284,7 @@ push $Nc9e3ff0
   xpos 2468
   ypos 302
  }
-push $Nc9e3ff0
+push $Nee1b4a0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -317,14 +315,14 @@ push $Nc9e3ff0
   xpos 3155
   ypos 435
  }
-set Ncaa6c70 [stack 0]
+set N19c060e0 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
   xpos 3898
   ypos 435
  }
-set Ncaab720 [stack 0]
+set N19ba4900 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
@@ -336,7 +334,7 @@ set Ncaab720 [stack 0]
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4978
   ypos 497
@@ -347,7 +345,7 @@ set Ncaab720 [stack 0]
   xpos 5006
   ypos 577
  }
-set Nd8f1370 [stack 0]
+set N19b9a660 [stack 0]
  Dot {
   name Dot9
   note_font_size 25
@@ -385,7 +383,7 @@ set Nd8f1370 [stack 0]
   xpos 4840
   ypos 768
  }
-push $Nd8f1370
+push $N19b9a660
  Card2 {
   rows 1
   columns 1
@@ -415,7 +413,7 @@ push $Nd8f1370
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch3
   xpos 4978
   ypos 770
@@ -498,7 +496,7 @@ push $Nd8f1370
   xpos 6110
   ypos 76
  }
-set Ncb77ed0 [stack 0]
+set N19cb0f30 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
@@ -530,14 +528,14 @@ set Ncb77ed0 [stack 0]
   xpos 5966
   ypos 224
  }
-push $Ncb77ed0
+push $N19cb0f30
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 6076
   ypos 214
@@ -566,7 +564,7 @@ push $Ncb77ed0
   xpos 6104
   ypos 479
  }
-push $Ncb77ed0
+push $N19cb0f30
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
@@ -596,7 +594,7 @@ push $Ncb77ed0
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 5660
   ypos 755
@@ -607,7 +605,7 @@ push $Ncb77ed0
   xpos 5688
   ypos 805
  }
-set Nfeee6e0 [stack 0]
+set N103a4780 [stack 0]
  Dot {
   name Dot21
   note_font_size 25
@@ -646,7 +644,7 @@ set Nfeee6e0 [stack 0]
   xpos 5506
   ypos 974
  }
-push $Nfeee6e0
+push $N103a4780
  Card2 {
   rows 1
   columns 1
@@ -676,7 +674,7 @@ push $Nfeee6e0
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch4
   xpos 5660
   ypos 976
@@ -778,7 +776,7 @@ push $Nfeee6e0
   xpos 3711
   ypos 16
  }
-set Ncca8d20 [stack 0]
+set N101bc550 [stack 0]
  Input {
   inputs 0
   name DiffuseBall
@@ -825,13 +823,13 @@ set Ncca8d20 [stack 0]
   xpos 4139
   ypos 81
  }
-push $Ncaab720
+push $N19ba4900
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 4126
   ypos 530
@@ -842,7 +840,7 @@ push $Ncaab720
   xpos 4154
   ypos 580
  }
-set Nfe77780 [stack 0]
+set N1026d7f0 [stack 0]
  Dot {
   name Dot2
   note_font_size 25
@@ -880,7 +878,7 @@ set Nfe77780 [stack 0]
   xpos 3988
   ypos 776
  }
-push $Nfe77780
+push $N1026d7f0
  Card2 {
   rows 1
   columns 1
@@ -910,7 +908,7 @@ push $Nfe77780
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch2
   xpos 4126
   ypos 778
@@ -922,7 +920,7 @@ push $Nfe77780
   xpos 4126
   ypos 836
  }
-push $Ncca8d20
+push $N101bc550
  Input {
   inputs 0
   name ChromeBall
@@ -969,18 +967,18 @@ push $Ncca8d20
   xpos 3340
   ypos 133
  }
-push $Ncaa6c70
+push $N19c060e0
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
   xpos 3327
   ypos 538
  }
-set Ncdf2b40 [stack 0]
+set N1de3b890 [stack 0]
  Card2 {
   translate {0.16 1.81 -17}
   control_points {3 3 3 6 
@@ -999,7 +997,7 @@ set Ncdf2b40 [stack 0]
   ypos 629
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
-push $Ncdf2b40
+push $N1de3b890
  Card2 {
   rows 1
   columns 1
@@ -1022,7 +1020,7 @@ push $Ncdf2b40
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch1
   xpos 3327
   ypos 685
@@ -1046,27 +1044,28 @@ push $Ncdf2b40
   xpos 4317
   ypos 1591
  }
-set N110a2c40 [stack 0]
+set N1deee720 [stack 0]
  TransformGeo {
   uniform_scale {{parent.scale}}
-  pivot {{"parent.justifyOverlay == 0 ? ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate - 4 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
+  pivot {{"parent.position == 2 ? ChromeBall_Card_horiz.translate + parent.OverlayPosition.x  - 0.5 : ChromeBall_Card_horiz.translate + parent.OverlayPosition.x - 0.5"} {"parent.position == 3 ? ChromeBall_Card_horiz.translate - 0.5 + parent.OverlayPosition.y : ChromeBall_Card_horiz.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
   name uniform_scale_horizonal
   xpos 4116
   ypos 1702
  }
-push $N110a2c40
+push $N1deee720
  TransformGeo {
   uniform_scale {{parent.scale}}
-  pivot {{"parent.justifyOverlay == 0 ? ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
+  pivot {{"parent.position == 0 ? ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
   name uniform_scale_vertical
+  selected true
   xpos 4289
   ypos 1672
  }
  Switch {
   inputs 2
-  which {{parent.overlayFormat}}
+  which {{format_controller.which}}
   name Switch6
-  xpos 4286
+  xpos 4289
   ypos 1702
  }
 push 0
@@ -1095,7 +1094,7 @@ push 0
   xpos 4286
   ypos 2076
  }
-set Ncea5090 [stack 0]
+set N1df42d70 [stack 0]
  Output {
   name Output1
   xpos 4286
@@ -1111,7 +1110,7 @@ set Ncea5090 [stack 0]
   addUserKnob {7 offset}
   offset 0.03
  }
-push $Ncea5090
+push $N1df42d70
  Viewer {
   frame_range 1-100
   viewerProcess "Rec.709 1886 (FS)"
@@ -1130,5 +1129,12 @@ push $Ncea5090
   addUserKnob {6 lock_buffer_8 l "lock buffer 8" +STARTLINE}
   addUserKnob {6 lock_buffer_9 l "lock buffer 9" +STARTLINE}
   addUserKnob {6 lock_buffer_0 l "lock buffer 0" +STARTLINE}
+ }
+ Switch {
+  inputs 0
+  which {{"parent.position == 0 ? 0 : parent.position == 1 ? 0 : 1"}}
+  name format_controller
+  xpos 4285
+  ypos -842
  }
 end_group

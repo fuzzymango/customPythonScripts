@@ -123,15 +123,36 @@ Group {
  }
  Camera2 {
   inputs 0
+  translate {{"parent.justifyOverlay == 0 ? 0 : 3.82"} 0 0}
+  haperture 24.89
+  vaperture 18.66
+  name Camera2
+  label HORIZONTAL
+  xpos 4708
+  ypos 1784
+  addUserKnob {20 Framestore}
+  addUserKnob {68 filmback l "Change filmback to:" M {"0\tCustom" "1\tFilm/35mm/2 perf 1.78" "2\tFilm/35mm/2 perf 2.40 v1" "3\tFilm/35mm/2 perf 2.40 v2" "4\tFilm/35mm/3 perf 1.78" "5\tFilm/35mm/4 perf 1.33 TV Safe" "6\tFilm/35mm/4 perf 1.33 Large TV Transmit" "7\tFilm/35mm/4 perf 1.78" "8\tFilm/35mm/4 perf 1.85 Extract" "9\tFilm/35mm/4 perf 1.85 Projection" "10\tFilm/35mm/4 perf 2.40 Anamorphic Projection" "11\tFilm/35mm/4 perf 2.40 Extract" "12\tFilm/16mm 1.37" "13\tFilm/Super 16mm 1.66" "14\tFilm/Super 16mm 1.85" "15\tFilm/35mm Full Frame" "16\tFilm/65mm 2.20" "17\tFilm/Panavision Super 70mm" "18\tFilm/70mm Extract 2.40" "19\tFilm/70mm Imax" "20\tFilm/Academy" "21\tFilm/Super35" "22\tArri/D21 1.33" "23\tArri/D21 1.78" "24\tArri/D21 1.85" "25\tArri/D21 2.40" "26\tArri/Alexa 16:9 1.78" "27\tArri/Alexa 16:9 1.85" "28\tArri/Alexa 16:9 2.39 Scope 2x" "29\tArri/Alexa 16:9 2.39 Flat" "30\tArri/Alexa 4:3 1.33" "31\tArri/Alexa 4:3 1.78" "32\tArri/Alexa 4:3 1.85" "33\tArri/Alexa 4:3 2.39 Scope 2x" "34\tArri/Alexa 4:3 2.39 Flat" "35\tBlack Magic/Pocket Cinema Camera" "36\tBlack Magic/Cinema Camera 2k" "37\tBlack Magic/Production Camera 4k" "38\tCanon/DSLR/M Still" "39\tCanon/DSLR/M Video" "40\tCanon/DSLR/1D MKIV Still" "41\tCanon/DSLR/1D MKIV Video" "42\tCanon/DSLR/1DX Still" "43\tCanon/DSLR/1DX Video" "44\tCanon/DSLR/5D MKII+III Still" "45\tCanon/DSLR/5D MKII+III Video" "46\tCanon/DSLR/6D Still" "47\tCanon/DSLR/6D Video" "48\tCanon/DSLR/7D Still" "49\tCanon/DSLR/7D Video" "50\tCanon/DSLR/60D Still" "51\tCanon/DSLR/60D Video" "52\tCanon/DSLR/70D Still" "53\tCanon/DSLR/70D Video" "54\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Still" "55\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Video" "56\tCanon/1DC Still" "57\tCanon/1DC Video" "58\tCanon/C100" "59\tCanon/C300" "60\tCanon/C500" "61\tCanon/XL1 4:3" "62\tCanon/XL1 16:9" "63\tCanon/XL2 4:3" "64\tCanon/XL2 16:9" "65\tNikon/DSLR/D4 FX Still" "66\tNikon/DSLR/D4 1.2x Still" "67\tNikon/DSLR/D4 DX Still" "68\tNikon/DSLR/D4 5:4 Still" "69\tNikon/DSLR/D90 Still" "70\tNikon/DSLR/D300S Still" "71\tNikon/DSLR/D600 FX Still" "72\tNikon/DSLR/D600 DX Still" "73\tNikon/DSLR/D700 FX Still" "74\tNikon/DSLR/D700 DX Still" "75\tNikon/DSLR/D800 FX Still" "76\tNikon/DSLR/D800 1.2x Still" "77\tNikon/DSLR/D800 DX Still" "78\tNikon/DSLR/D800 5:4 Still" "79\tNikon/DSLR/D3100 DX Still" "80\tNikon/DSLR/D3200 DX Still" "81\tNikon/DSLR/D5100 DX Still" "82\tNikon/DSLR/D7000 DX Still" "83\tPhantom/65 4k" "84\tPhantom/65 4k 16:9" "85\tPhantom/65 UHD" "86\tPhantom/65 2k Square" "87\tPhantom/65 2k 1.85" "88\tPhantom/65 2k 2.35" "89\tPhantom/65 1080p" "90\tPhantom/65 1632x1200" "91\tPhantom/65 720p" "92\tPhantom/65 1152x896" "93\tPhantom/65 800x600" "94\tPhantom/65 640x480" "95\tPhantom/65 512x512" "96\tPhantom/65 256x256" "97\tPhantom/Flex 2.5k" "98\tPhantom/Flex 1080p" "99\tPhantom/Flex 720p" "100\tPhantom/Flex 640x480" "101\tPhantom/HD Gold 2k Square" "102\tPhantom/HD Gold 2k 1.85" "103\tPhantom/HD Gold 2k 2.35" "104\tPhantom/HD Gold 1080p" "105\tPhantom/HD Gold 720p" "106\tPhantom/HD Gold 1152x896" "107\tPhantom/HD Gold 800x600" "108\tPhantom/HD Gold 640x480" "109\tPhantom/HD Gold 512x512" "110\tRed/One/4.5k" "111\tRed/One/4k 16:9" "112\tRed/One/4k 2:1" "113\tRed/One/4k HD" "114\tRed/One/4k Anamorphic" "115\tRed/One/3k 16:9" "116\tRed/One/3k 2:1" "117\tRed/One/2k 16:9" "118\tRed/One/2k 2:1" "119\tRed/Epic/5k" "120\tRed/Epic/5k 2:1" "121\tRed/Epic/5k HD" "122\tRed/Epic/5k ANA" "123\tRed/Epic/5k WS" "124\tRed/Epic/4k" "125\tRed/Epic/4k HD" "126\tRed/Epic/3k" "127\tRed/Epic/3k HD" "128\tRed/Epic/2k" "129\tRed/Epic/2k HD" "130\tRed/Epic/2k WS" "131\tRed/Epic/1k HD" "132\tRed/Epic/1k WS" "133\tRed/Epic Dragon/6k Full" "134\tRed/Epic Dragon/6k FF3" "135\tRed/Epic Dragon/5.5k Full" "136\tRed/Epic Dragon/5k Full" "137\tRed/Epic Dragon/4k Full" "138\tRed/Epic Dragon/3k Full" "139\tRed/Epic Dragon/2k Full" "140\tRed/Epic Dragon/1k Full" "141\tSony/DSLR/APS-C A37" "142\tSony/DSLR/APS-C A57" "143\tSony/DSLR/APS-C A58" "144\tSony/DSLR/APS-C A65" "145\tSony/DSLR/APS-C A77" "146\tSony/DSLR/APS-C A3000" "147\tSony/DSLR/Full Frame A99" "148\tSony/DSLR/Mirrorless A7" "149\tSony/DSLR/NEX-6" "150\tSony/DSLR/SLT-A37" "151\tSony/DSLR/SLT-A57" "152\tSony/DSLR/SLT-A99" "153\tSony/DSR-400" "154\tSony/EX1" "155\tSony/F3" "156\tSony/FS100U" "157\tSony/FS700" "158\tSony/F35 1.78" "159\tSony/F35 1.85" "160\tSony/F35 2.39" "161\tSony/F55" "162\tSony/F5" "163\tSony/F65"}}
+  filmback 21
+ }
+ Camera2 {
+  inputs 0
   translate {{"parent.justifyOverlay == 0 ? 0 : 7.36"} 0 0}
   haperture 24.89
   vaperture 18.66
   name Camera1
-  xpos 4533
-  ypos 1649
+  label VERTICAL
+  xpos 4572
+  ypos 1775
   addUserKnob {20 Framestore}
   addUserKnob {68 filmback l "Change filmback to:" M {"0\tCustom" "1\tFilm/35mm/2 perf 1.78" "2\tFilm/35mm/2 perf 2.40 v1" "3\tFilm/35mm/2 perf 2.40 v2" "4\tFilm/35mm/3 perf 1.78" "5\tFilm/35mm/4 perf 1.33 TV Safe" "6\tFilm/35mm/4 perf 1.33 Large TV Transmit" "7\tFilm/35mm/4 perf 1.78" "8\tFilm/35mm/4 perf 1.85 Extract" "9\tFilm/35mm/4 perf 1.85 Projection" "10\tFilm/35mm/4 perf 2.40 Anamorphic Projection" "11\tFilm/35mm/4 perf 2.40 Extract" "12\tFilm/16mm 1.37" "13\tFilm/Super 16mm 1.66" "14\tFilm/Super 16mm 1.85" "15\tFilm/35mm Full Frame" "16\tFilm/65mm 2.20" "17\tFilm/Panavision Super 70mm" "18\tFilm/70mm Extract 2.40" "19\tFilm/70mm Imax" "20\tFilm/Academy" "21\tFilm/Super35" "22\tArri/D21 1.33" "23\tArri/D21 1.78" "24\tArri/D21 1.85" "25\tArri/D21 2.40" "26\tArri/Alexa 16:9 1.78" "27\tArri/Alexa 16:9 1.85" "28\tArri/Alexa 16:9 2.39 Scope 2x" "29\tArri/Alexa 16:9 2.39 Flat" "30\tArri/Alexa 4:3 1.33" "31\tArri/Alexa 4:3 1.78" "32\tArri/Alexa 4:3 1.85" "33\tArri/Alexa 4:3 2.39 Scope 2x" "34\tArri/Alexa 4:3 2.39 Flat" "35\tBlack Magic/Pocket Cinema Camera" "36\tBlack Magic/Cinema Camera 2k" "37\tBlack Magic/Production Camera 4k" "38\tCanon/DSLR/M Still" "39\tCanon/DSLR/M Video" "40\tCanon/DSLR/1D MKIV Still" "41\tCanon/DSLR/1D MKIV Video" "42\tCanon/DSLR/1DX Still" "43\tCanon/DSLR/1DX Video" "44\tCanon/DSLR/5D MKII+III Still" "45\tCanon/DSLR/5D MKII+III Video" "46\tCanon/DSLR/6D Still" "47\tCanon/DSLR/6D Video" "48\tCanon/DSLR/7D Still" "49\tCanon/DSLR/7D Video" "50\tCanon/DSLR/60D Still" "51\tCanon/DSLR/60D Video" "52\tCanon/DSLR/70D Still" "53\tCanon/DSLR/70D Video" "54\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Still" "55\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Video" "56\tCanon/1DC Still" "57\tCanon/1DC Video" "58\tCanon/C100" "59\tCanon/C300" "60\tCanon/C500" "61\tCanon/XL1 4:3" "62\tCanon/XL1 16:9" "63\tCanon/XL2 4:3" "64\tCanon/XL2 16:9" "65\tNikon/DSLR/D4 FX Still" "66\tNikon/DSLR/D4 1.2x Still" "67\tNikon/DSLR/D4 DX Still" "68\tNikon/DSLR/D4 5:4 Still" "69\tNikon/DSLR/D90 Still" "70\tNikon/DSLR/D300S Still" "71\tNikon/DSLR/D600 FX Still" "72\tNikon/DSLR/D600 DX Still" "73\tNikon/DSLR/D700 FX Still" "74\tNikon/DSLR/D700 DX Still" "75\tNikon/DSLR/D800 FX Still" "76\tNikon/DSLR/D800 1.2x Still" "77\tNikon/DSLR/D800 DX Still" "78\tNikon/DSLR/D800 5:4 Still" "79\tNikon/DSLR/D3100 DX Still" "80\tNikon/DSLR/D3200 DX Still" "81\tNikon/DSLR/D5100 DX Still" "82\tNikon/DSLR/D7000 DX Still" "83\tPhantom/65 4k" "84\tPhantom/65 4k 16:9" "85\tPhantom/65 UHD" "86\tPhantom/65 2k Square" "87\tPhantom/65 2k 1.85" "88\tPhantom/65 2k 2.35" "89\tPhantom/65 1080p" "90\tPhantom/65 1632x1200" "91\tPhantom/65 720p" "92\tPhantom/65 1152x896" "93\tPhantom/65 800x600" "94\tPhantom/65 640x480" "95\tPhantom/65 512x512" "96\tPhantom/65 256x256" "97\tPhantom/Flex 2.5k" "98\tPhantom/Flex 1080p" "99\tPhantom/Flex 720p" "100\tPhantom/Flex 640x480" "101\tPhantom/HD Gold 2k Square" "102\tPhantom/HD Gold 2k 1.85" "103\tPhantom/HD Gold 2k 2.35" "104\tPhantom/HD Gold 1080p" "105\tPhantom/HD Gold 720p" "106\tPhantom/HD Gold 1152x896" "107\tPhantom/HD Gold 800x600" "108\tPhantom/HD Gold 640x480" "109\tPhantom/HD Gold 512x512" "110\tRed/One/4.5k" "111\tRed/One/4k 16:9" "112\tRed/One/4k 2:1" "113\tRed/One/4k HD" "114\tRed/One/4k Anamorphic" "115\tRed/One/3k 16:9" "116\tRed/One/3k 2:1" "117\tRed/One/2k 16:9" "118\tRed/One/2k 2:1" "119\tRed/Epic/5k" "120\tRed/Epic/5k 2:1" "121\tRed/Epic/5k HD" "122\tRed/Epic/5k ANA" "123\tRed/Epic/5k WS" "124\tRed/Epic/4k" "125\tRed/Epic/4k HD" "126\tRed/Epic/3k" "127\tRed/Epic/3k HD" "128\tRed/Epic/2k" "129\tRed/Epic/2k HD" "130\tRed/Epic/2k WS" "131\tRed/Epic/1k HD" "132\tRed/Epic/1k WS" "133\tRed/Epic Dragon/6k Full" "134\tRed/Epic Dragon/6k FF3" "135\tRed/Epic Dragon/5.5k Full" "136\tRed/Epic Dragon/5k Full" "137\tRed/Epic Dragon/4k Full" "138\tRed/Epic Dragon/3k Full" "139\tRed/Epic Dragon/2k Full" "140\tRed/Epic Dragon/1k Full" "141\tSony/DSLR/APS-C A37" "142\tSony/DSLR/APS-C A57" "143\tSony/DSLR/APS-C A58" "144\tSony/DSLR/APS-C A65" "145\tSony/DSLR/APS-C A77" "146\tSony/DSLR/APS-C A3000" "147\tSony/DSLR/Full Frame A99" "148\tSony/DSLR/Mirrorless A7" "149\tSony/DSLR/NEX-6" "150\tSony/DSLR/SLT-A37" "151\tSony/DSLR/SLT-A57" "152\tSony/DSLR/SLT-A99" "153\tSony/DSR-400" "154\tSony/EX1" "155\tSony/F3" "156\tSony/FS100U" "157\tSony/FS700" "158\tSony/F35 1.78" "159\tSony/F35 1.85" "160\tSony/F35 2.39" "161\tSony/F55" "162\tSony/F5" "163\tSony/F65"}}
   filmback 21
+ }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch5
+  xpos 4585
+  ypos 1916
  }
  Input {
   inputs 0
@@ -318,7 +339,19 @@ set Ncaab720 [stack 0]
   xpos 4978
   ypos 497
  }
-set Ncab4a10 [stack 0]
+ Dot {
+  name Dot8
+  note_font_size 25
+  xpos 5006
+  ypos 577
+ }
+set Nd8f1370 [stack 0]
+ Dot {
+  name Dot9
+  note_font_size 25
+  xpos 4840
+  ypos 577
+ }
  Card2 {
   translate {{"DiffuseBallBox_Card_horiz.translate + 1 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
   control_points {3 3 3 6 
@@ -335,8 +368,22 @@ set Ncab4a10 [stack 0]
   name refobject_card_horiz
   xpos 4812
   ypos 640
+  disable {{"parent.refObject == 0 ? 1 : 0"}}
  }
-push $Ncab4a10
+ TransformGeo {
+  translate {{"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (-1 - offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (-2 - 2*offset.offset) : 0"} 0 0}
+  name TransformGeo8
+  label "SNAP HORIZONTAL"
+  xpos 4812
+  ypos 685
+ }
+ Dot {
+  name Dot5
+  note_font_size 25
+  xpos 4840
+  ypos 768
+ }
+push $Nd8f1370
  Card2 {
   rows 1
   columns 1
@@ -357,26 +404,26 @@ push $Ncab4a10
   ypos 633
   disable {{"parent.refObject == 1 ? 0 : 1"}}
  }
+ TransformGeo {
+  translate {0 {"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (1 + offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (2 + 2*offset.offset) : 0"} 0}
+  name TransformGeo1
+  label "SNAP VERTICAL"
+  xpos 4978
+  ypos 675
+ }
  Switch {
   inputs 2
   which {{parent.overlayFormat}}
   name Switch3
   xpos 4978
-  ypos 671
+  ypos 770
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo7
   label GUI
   xpos 4978
-  ypos 713
- }
- TransformGeo {
-  translate {0 {"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (1 + offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (2 + 2*offset.offset) : 0"} 0}
-  name TransformGeo1
-  label SNAP
-  xpos 4978
-  ypos 764
+  ypos 826
  }
  Input {
   inputs 0
@@ -552,7 +599,19 @@ push $Ncb77ed0
   xpos 5660
   ypos 755
  }
-set Ncc2ac90 [stack 0]
+ Dot {
+  name Dot17
+  note_font_size 25
+  xpos 5688
+  ypos 805
+ }
+set Nfeee6e0 [stack 0]
+ Dot {
+  name Dot21
+  note_font_size 25
+  xpos 5506
+  ypos 805
+ }
  Card2 {
   translate {{"refobject_card_horiz.translate + 1.2 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
   uniform_scale 1.4
@@ -568,10 +627,24 @@ set Ncc2ac90 [stack 0]
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name chart_card_horiz
-  xpos 5477
-  ypos 841
+  xpos 5478
+  ypos 862
+  disable {{"parent.colourChart == 1 ? 0 : 1"}}
  }
-push $Ncc2ac90
+ TransformGeo {
+  translate {{"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (-1 - offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (-2 - 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (-3 - 3*offset.offset) : 0"} 0 0}
+  name TransformGeo10
+  label "SNAP HORIZONTAL"
+  xpos 5481
+  ypos 922
+ }
+ Dot {
+  name Dot22
+  note_font_size 25
+  xpos 5506
+  ypos 974
+ }
+push $Nfeee6e0
  Card2 {
   rows 1
   columns 1
@@ -589,29 +662,29 @@ push $Ncc2ac90
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name chart_card
   xpos 5660
-  ypos 817
+  ypos 852
   disable {{"parent.colourChart == 0 ? 1 : 0"}}
+ }
+ TransformGeo {
+  translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (1 + offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (2 + 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (3 + 3*offset.offset) : 0"} 0}
+  name TransformGeo9
+  label "SNAP VERTICAL"
+  xpos 5660
+  ypos 917
  }
  Switch {
   inputs 2
   which {{parent.overlayFormat}}
   name Switch4
   xpos 5660
-  ypos 896
+  ypos 976
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo4
   label GUI
   xpos 5660
-  ypos 958
- }
- TransformGeo {
-  translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (1 + offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (2 + 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (3 + 3*offset.offset) : 0"} 0}
-  name TransformGeo9
-  label SNAP
-  xpos 5660
-  ypos 996
+  ypos 1076
  }
  Roto {
   inputs 0
@@ -761,7 +834,19 @@ push $Ncaab720
   xpos 4126
   ypos 530
  }
-set Ncd467f0 [stack 0]
+ Dot {
+  name Dot1
+  note_font_size 25
+  xpos 4154
+  ypos 580
+ }
+set Nfe77780 [stack 0]
+ Dot {
+  name Dot2
+  note_font_size 25
+  xpos 3988
+  ypos 580
+ }
  Card2 {
   translate {{"ChromeBall_Card_horiz.translate + 1 +  offset.offset"} {ChromeBall_Card_horiz.translate} -17}
   control_points {3 3 3 6 
@@ -777,9 +862,23 @@ set Ncd467f0 [stack 0]
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name DiffuseBallBox_Card_horiz
   xpos 3960
-  ypos 634
+  ypos 636
+  disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
  }
-push $Ncd467f0
+ TransformGeo {
+  translate {{"parent.chromeBall == 0 ? (-1 - offset.offset) : 0"} 0 0}
+  name TransformGeo6
+  label "SNAP HORIZONTAL"
+  xpos 3960
+  ypos 687
+ }
+ Dot {
+  name Dot3
+  note_font_size 25
+  xpos 3988
+  ypos 776
+ }
+push $Nfe77780
  Card2 {
   rows 1
   columns 1
@@ -797,29 +896,29 @@ push $Ncd467f0
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name DiffuseBallBox_Card
   xpos 4126
-  ypos 603
+  ypos 627
   disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
+ }
+ TransformGeo {
+  translate {0 {"parent.chromeBall == 0 ? (1 + offset.offset) : 0"} 0}
+  name TransformGeo5
+  label "SNAP VERTICAL"
+  xpos 4126
+  ypos 686
  }
  Switch {
   inputs 2
   which {{parent.overlayFormat}}
   name Switch2
   xpos 4126
-  ypos 664
+  ypos 778
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo3
   label GUI
   xpos 4126
-  ypos 724
- }
- TransformGeo {
-  translate {0 {"parent.chromeBall == 0 ? (1 + offset.offset) : 0"} 0}
-  name TransformGeo5
-  label SNAP
-  xpos 4126
-  ypos 814
+  ypos 836
  }
 push $Ncca8d20
  Input {
@@ -881,7 +980,7 @@ push $Ncaa6c70
  }
 set Ncdf2b40 [stack 0]
  Card2 {
-  translate {0 1.81 -17}
+  translate {0.16 1.81 -17}
   control_points {3 3 3 6 
 
 1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
@@ -896,6 +995,7 @@ set Ncdf2b40 [stack 0]
   name ChromeBall_Card_horiz
   xpos 3156
   ypos 629
+  disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
 push $Ncdf2b40
  Card2 {
@@ -930,7 +1030,7 @@ push $Ncdf2b40
   name TransformGeo2
   label GUI
   xpos 3327
-  ypos 737
+  ypos 735
  }
  Scene {
   inputs 4
@@ -938,12 +1038,34 @@ push $Ncdf2b40
   xpos 4299
   ypos 1424
  }
+ Dot {
+  name Dot23
+  note_font_size 25
+  xpos 4317
+  ypos 1591
+ }
+set N110a2c40 [stack 0]
+ TransformGeo {
+  uniform_scale {{parent.scale}}
+  pivot {{"parent.justifyOverlay == 0 ? ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate - 4 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
+  name uniform_scale_horizonal
+  xpos 4116
+  ypos 1702
+ }
+push $N110a2c40
  TransformGeo {
   uniform_scale {{parent.scale}}
   pivot {{"parent.justifyOverlay == 0 ? ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
-  name uniform_scale
-  xpos 4285
-  ypos 1549
+  name uniform_scale_vertical
+  xpos 4289
+  ypos 1672
+ }
+ Switch {
+  inputs 2
+  which {{parent.overlayFormat}}
+  name Switch6
+  xpos 4286
+  ypos 1702
  }
 push 0
  ScanlineRender {
@@ -955,27 +1077,27 @@ push 0
   shutteroffset centred
   motion_vectors_type distance
   name ScanlineRender3
-  xpos 4289
-  ypos 1669
+  xpos 4286
+  ypos 1916
  }
  Remove {
   operation keep
   channels rgba
   name Remove1
-  xpos 4288
-  ypos 1748
+  xpos 4285
+  ypos 1995
  }
  Reformat {
   black_outside true
   name Reformat2
-  xpos 4289
-  ypos 1829
+  xpos 4286
+  ypos 2076
  }
 set Ncea5090 [stack 0]
  Output {
   name Output1
-  xpos 4289
-  ypos 1970
+  xpos 4286
+  ypos 2217
  }
  NoOp {
   inputs 0
@@ -992,8 +1114,8 @@ push $Ncea5090
   frame_range 1-100
   viewerProcess "Rec.709 1886 (FS)"
   name Viewer1
-  xpos 4289
-  ypos 1855
+  xpos 4286
+  ypos 2102
   addUserKnob {20 Lock}
   addUserKnob {6 lock_all_buffers l "lock all buffers" -STARTLINE}
   addUserKnob {6 lock_buffer_1 l "lock buffer 1" +STARTLINE}

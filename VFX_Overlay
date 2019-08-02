@@ -62,7 +62,9 @@ Group {
  addUserKnob {26 ""}
  addUserKnob {12 OverlayPosition l "Offset Position"}
  addUserKnob {4 overlayFormat l "overlay format " M {vertical horizontal}}
+ overlayFormat horizontal
  addUserKnob {4 justifyOverlay l "justify overlay" M {right left "" "" "" "" ""}}
+ justifyOverlay left
  addUserKnob {7 scale R 0 2}
  scale 1
 }

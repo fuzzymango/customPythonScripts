@@ -12,8 +12,8 @@ Group {
  note_font "DejaVu Sans"
  note_font_color 0xff
  selected true
- xpos 20
- ypos 39
+ xpos 648
+ ypos 171
  addUserKnob {20 VFXoverlay l "VFX overlay"}
  addUserKnob {26 ColourChart l "" t "Set the corner postions of the colour chart, starting with the white chart first, moving the black chart and then continuing anti-clockwise." +STARTLINE T "Colour Chart       "}
  addUserKnob {26 break l "" -STARTLINE}
@@ -63,12 +63,11 @@ Group {
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 break_3 l "" +STARTLINE T "   "}
  addUserKnob {26 position_line l "" +STARTLINE T "Position       "}
- addUserKnob {26 break l "" -STARTLINE}
  addUserKnob {12 OverlayPosition l "Offset Position"}
  addUserKnob {7 scale R 0 2}
  scale 1
  addUserKnob {4 position M {left right "top " bottom}}
- position "top "
+ position right
 }
  BackdropNode {
   inputs 0
@@ -76,8 +75,8 @@ Group {
   tile_color 0xf0e68c01
   label "square tile background"
   note_font_size 42
-  xpos 2120
-  ypos -383
+  xpos 2107
+  ypos -385
   bdwidth 846
   bdheight 1010
  }
@@ -87,10 +86,10 @@ Group {
   tile_color 0xe9967a01
   label "chrome ball"
   note_font_size 42
-  xpos 3145
-  ypos -415
-  bdwidth 396
-  bdheight 1200
+  xpos 3102
+  ypos -408
+  bdwidth 513
+  bdheight 1220
  }
  BackdropNode {
   inputs 0
@@ -98,8 +97,8 @@ Group {
   tile_color 0xbc8f8f01
   label "diffuse ball"
   note_font_size 42
-  xpos 3888
-  ypos -363
+  xpos 3914
+  ypos -366
   bdwidth 532
   bdheight 1259
  }
@@ -109,8 +108,8 @@ Group {
   tile_color 0xafeeee01
   label "colour chart"
   note_font_size 42
-  xpos 5406
-  ypos -169
+  xpos 5450
+  ypos -157
   bdwidth 1200
   bdheight 1418
  }
@@ -120,20 +119,20 @@ Group {
   tile_color 0xbbafeeff
   label "reference object"
   note_font_size 42
-  xpos 4731
-  ypos -326
+  xpos 4776
+  ypos -319
   bdwidth 569
   bdheight 1309
  }
  Camera2 {
   inputs 0
-  translate {{3.82} {"parent.position == 3 ? 3.63 : 0"} 0}
+  translate {3.82 {"parent.position == 3 ? 3.63 : 0"} 0}
   haperture 24.89
   vaperture 18.66
   name Camera2
   label HORIZONTAL
-  xpos 4708
-  ypos 1784
+  xpos 4700
+  ypos 1794
   addUserKnob {20 Framestore}
   addUserKnob {68 filmback l "Change filmback to:" M {"0\tCustom" "1\tFilm/35mm/2 perf 1.78" "2\tFilm/35mm/2 perf 2.40 v1" "3\tFilm/35mm/2 perf 2.40 v2" "4\tFilm/35mm/3 perf 1.78" "5\tFilm/35mm/4 perf 1.33 TV Safe" "6\tFilm/35mm/4 perf 1.33 Large TV Transmit" "7\tFilm/35mm/4 perf 1.78" "8\tFilm/35mm/4 perf 1.85 Extract" "9\tFilm/35mm/4 perf 1.85 Projection" "10\tFilm/35mm/4 perf 2.40 Anamorphic Projection" "11\tFilm/35mm/4 perf 2.40 Extract" "12\tFilm/16mm 1.37" "13\tFilm/Super 16mm 1.66" "14\tFilm/Super 16mm 1.85" "15\tFilm/35mm Full Frame" "16\tFilm/65mm 2.20" "17\tFilm/Panavision Super 70mm" "18\tFilm/70mm Extract 2.40" "19\tFilm/70mm Imax" "20\tFilm/Academy" "21\tFilm/Super35" "22\tArri/D21 1.33" "23\tArri/D21 1.78" "24\tArri/D21 1.85" "25\tArri/D21 2.40" "26\tArri/Alexa 16:9 1.78" "27\tArri/Alexa 16:9 1.85" "28\tArri/Alexa 16:9 2.39 Scope 2x" "29\tArri/Alexa 16:9 2.39 Flat" "30\tArri/Alexa 4:3 1.33" "31\tArri/Alexa 4:3 1.78" "32\tArri/Alexa 4:3 1.85" "33\tArri/Alexa 4:3 2.39 Scope 2x" "34\tArri/Alexa 4:3 2.39 Flat" "35\tBlack Magic/Pocket Cinema Camera" "36\tBlack Magic/Cinema Camera 2k" "37\tBlack Magic/Production Camera 4k" "38\tCanon/DSLR/M Still" "39\tCanon/DSLR/M Video" "40\tCanon/DSLR/1D MKIV Still" "41\tCanon/DSLR/1D MKIV Video" "42\tCanon/DSLR/1DX Still" "43\tCanon/DSLR/1DX Video" "44\tCanon/DSLR/5D MKII+III Still" "45\tCanon/DSLR/5D MKII+III Video" "46\tCanon/DSLR/6D Still" "47\tCanon/DSLR/6D Video" "48\tCanon/DSLR/7D Still" "49\tCanon/DSLR/7D Video" "50\tCanon/DSLR/60D Still" "51\tCanon/DSLR/60D Video" "52\tCanon/DSLR/70D Still" "53\tCanon/DSLR/70D Video" "54\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Still" "55\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Video" "56\tCanon/1DC Still" "57\tCanon/1DC Video" "58\tCanon/C100" "59\tCanon/C300" "60\tCanon/C500" "61\tCanon/XL1 4:3" "62\tCanon/XL1 16:9" "63\tCanon/XL2 4:3" "64\tCanon/XL2 16:9" "65\tNikon/DSLR/D4 FX Still" "66\tNikon/DSLR/D4 1.2x Still" "67\tNikon/DSLR/D4 DX Still" "68\tNikon/DSLR/D4 5:4 Still" "69\tNikon/DSLR/D90 Still" "70\tNikon/DSLR/D300S Still" "71\tNikon/DSLR/D600 FX Still" "72\tNikon/DSLR/D600 DX Still" "73\tNikon/DSLR/D700 FX Still" "74\tNikon/DSLR/D700 DX Still" "75\tNikon/DSLR/D800 FX Still" "76\tNikon/DSLR/D800 1.2x Still" "77\tNikon/DSLR/D800 DX Still" "78\tNikon/DSLR/D800 5:4 Still" "79\tNikon/DSLR/D3100 DX Still" "80\tNikon/DSLR/D3200 DX Still" "81\tNikon/DSLR/D5100 DX Still" "82\tNikon/DSLR/D7000 DX Still" "83\tPhantom/65 4k" "84\tPhantom/65 4k 16:9" "85\tPhantom/65 UHD" "86\tPhantom/65 2k Square" "87\tPhantom/65 2k 1.85" "88\tPhantom/65 2k 2.35" "89\tPhantom/65 1080p" "90\tPhantom/65 1632x1200" "91\tPhantom/65 720p" "92\tPhantom/65 1152x896" "93\tPhantom/65 800x600" "94\tPhantom/65 640x480" "95\tPhantom/65 512x512" "96\tPhantom/65 256x256" "97\tPhantom/Flex 2.5k" "98\tPhantom/Flex 1080p" "99\tPhantom/Flex 720p" "100\tPhantom/Flex 640x480" "101\tPhantom/HD Gold 2k Square" "102\tPhantom/HD Gold 2k 1.85" "103\tPhantom/HD Gold 2k 2.35" "104\tPhantom/HD Gold 1080p" "105\tPhantom/HD Gold 720p" "106\tPhantom/HD Gold 1152x896" "107\tPhantom/HD Gold 800x600" "108\tPhantom/HD Gold 640x480" "109\tPhantom/HD Gold 512x512" "110\tRed/One/4.5k" "111\tRed/One/4k 16:9" "112\tRed/One/4k 2:1" "113\tRed/One/4k HD" "114\tRed/One/4k Anamorphic" "115\tRed/One/3k 16:9" "116\tRed/One/3k 2:1" "117\tRed/One/2k 16:9" "118\tRed/One/2k 2:1" "119\tRed/Epic/5k" "120\tRed/Epic/5k 2:1" "121\tRed/Epic/5k HD" "122\tRed/Epic/5k ANA" "123\tRed/Epic/5k WS" "124\tRed/Epic/4k" "125\tRed/Epic/4k HD" "126\tRed/Epic/3k" "127\tRed/Epic/3k HD" "128\tRed/Epic/2k" "129\tRed/Epic/2k HD" "130\tRed/Epic/2k WS" "131\tRed/Epic/1k HD" "132\tRed/Epic/1k WS" "133\tRed/Epic Dragon/6k Full" "134\tRed/Epic Dragon/6k FF3" "135\tRed/Epic Dragon/5.5k Full" "136\tRed/Epic Dragon/5k Full" "137\tRed/Epic Dragon/4k Full" "138\tRed/Epic Dragon/3k Full" "139\tRed/Epic Dragon/2k Full" "140\tRed/Epic Dragon/1k Full" "141\tSony/DSLR/APS-C A37" "142\tSony/DSLR/APS-C A57" "143\tSony/DSLR/APS-C A58" "144\tSony/DSLR/APS-C A65" "145\tSony/DSLR/APS-C A77" "146\tSony/DSLR/APS-C A3000" "147\tSony/DSLR/Full Frame A99" "148\tSony/DSLR/Mirrorless A7" "149\tSony/DSLR/NEX-6" "150\tSony/DSLR/SLT-A37" "151\tSony/DSLR/SLT-A57" "152\tSony/DSLR/SLT-A99" "153\tSony/DSR-400" "154\tSony/EX1" "155\tSony/F3" "156\tSony/FS100U" "157\tSony/FS700" "158\tSony/F35 1.78" "159\tSony/F35 1.85" "160\tSony/F35 2.39" "161\tSony/F55" "162\tSony/F5" "163\tSony/F65"}}
   filmback 21
@@ -145,8 +144,8 @@ Group {
   vaperture 18.66
   name Camera1
   label VERTICAL
-  xpos 4484
-  ypos 1775
+  xpos 4480
+  ypos 1770
   addUserKnob {20 Framestore}
   addUserKnob {68 filmback l "Change filmback to:" M {"0\tCustom" "1\tFilm/35mm/2 perf 1.78" "2\tFilm/35mm/2 perf 2.40 v1" "3\tFilm/35mm/2 perf 2.40 v2" "4\tFilm/35mm/3 perf 1.78" "5\tFilm/35mm/4 perf 1.33 TV Safe" "6\tFilm/35mm/4 perf 1.33 Large TV Transmit" "7\tFilm/35mm/4 perf 1.78" "8\tFilm/35mm/4 perf 1.85 Extract" "9\tFilm/35mm/4 perf 1.85 Projection" "10\tFilm/35mm/4 perf 2.40 Anamorphic Projection" "11\tFilm/35mm/4 perf 2.40 Extract" "12\tFilm/16mm 1.37" "13\tFilm/Super 16mm 1.66" "14\tFilm/Super 16mm 1.85" "15\tFilm/35mm Full Frame" "16\tFilm/65mm 2.20" "17\tFilm/Panavision Super 70mm" "18\tFilm/70mm Extract 2.40" "19\tFilm/70mm Imax" "20\tFilm/Academy" "21\tFilm/Super35" "22\tArri/D21 1.33" "23\tArri/D21 1.78" "24\tArri/D21 1.85" "25\tArri/D21 2.40" "26\tArri/Alexa 16:9 1.78" "27\tArri/Alexa 16:9 1.85" "28\tArri/Alexa 16:9 2.39 Scope 2x" "29\tArri/Alexa 16:9 2.39 Flat" "30\tArri/Alexa 4:3 1.33" "31\tArri/Alexa 4:3 1.78" "32\tArri/Alexa 4:3 1.85" "33\tArri/Alexa 4:3 2.39 Scope 2x" "34\tArri/Alexa 4:3 2.39 Flat" "35\tBlack Magic/Pocket Cinema Camera" "36\tBlack Magic/Cinema Camera 2k" "37\tBlack Magic/Production Camera 4k" "38\tCanon/DSLR/M Still" "39\tCanon/DSLR/M Video" "40\tCanon/DSLR/1D MKIV Still" "41\tCanon/DSLR/1D MKIV Video" "42\tCanon/DSLR/1DX Still" "43\tCanon/DSLR/1DX Video" "44\tCanon/DSLR/5D MKII+III Still" "45\tCanon/DSLR/5D MKII+III Video" "46\tCanon/DSLR/6D Still" "47\tCanon/DSLR/6D Video" "48\tCanon/DSLR/7D Still" "49\tCanon/DSLR/7D Video" "50\tCanon/DSLR/60D Still" "51\tCanon/DSLR/60D Video" "52\tCanon/DSLR/70D Still" "53\tCanon/DSLR/70D Video" "54\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Still" "55\tCanon/DSLR/Rebel 550D 600D 650D T2i T3i T4i Video" "56\tCanon/1DC Still" "57\tCanon/1DC Video" "58\tCanon/C100" "59\tCanon/C300" "60\tCanon/C500" "61\tCanon/XL1 4:3" "62\tCanon/XL1 16:9" "63\tCanon/XL2 4:3" "64\tCanon/XL2 16:9" "65\tNikon/DSLR/D4 FX Still" "66\tNikon/DSLR/D4 1.2x Still" "67\tNikon/DSLR/D4 DX Still" "68\tNikon/DSLR/D4 5:4 Still" "69\tNikon/DSLR/D90 Still" "70\tNikon/DSLR/D300S Still" "71\tNikon/DSLR/D600 FX Still" "72\tNikon/DSLR/D600 DX Still" "73\tNikon/DSLR/D700 FX Still" "74\tNikon/DSLR/D700 DX Still" "75\tNikon/DSLR/D800 FX Still" "76\tNikon/DSLR/D800 1.2x Still" "77\tNikon/DSLR/D800 DX Still" "78\tNikon/DSLR/D800 5:4 Still" "79\tNikon/DSLR/D3100 DX Still" "80\tNikon/DSLR/D3200 DX Still" "81\tNikon/DSLR/D5100 DX Still" "82\tNikon/DSLR/D7000 DX Still" "83\tPhantom/65 4k" "84\tPhantom/65 4k 16:9" "85\tPhantom/65 UHD" "86\tPhantom/65 2k Square" "87\tPhantom/65 2k 1.85" "88\tPhantom/65 2k 2.35" "89\tPhantom/65 1080p" "90\tPhantom/65 1632x1200" "91\tPhantom/65 720p" "92\tPhantom/65 1152x896" "93\tPhantom/65 800x600" "94\tPhantom/65 640x480" "95\tPhantom/65 512x512" "96\tPhantom/65 256x256" "97\tPhantom/Flex 2.5k" "98\tPhantom/Flex 1080p" "99\tPhantom/Flex 720p" "100\tPhantom/Flex 640x480" "101\tPhantom/HD Gold 2k Square" "102\tPhantom/HD Gold 2k 1.85" "103\tPhantom/HD Gold 2k 2.35" "104\tPhantom/HD Gold 1080p" "105\tPhantom/HD Gold 720p" "106\tPhantom/HD Gold 1152x896" "107\tPhantom/HD Gold 800x600" "108\tPhantom/HD Gold 640x480" "109\tPhantom/HD Gold 512x512" "110\tRed/One/4.5k" "111\tRed/One/4k 16:9" "112\tRed/One/4k 2:1" "113\tRed/One/4k HD" "114\tRed/One/4k Anamorphic" "115\tRed/One/3k 16:9" "116\tRed/One/3k 2:1" "117\tRed/One/2k 16:9" "118\tRed/One/2k 2:1" "119\tRed/Epic/5k" "120\tRed/Epic/5k 2:1" "121\tRed/Epic/5k HD" "122\tRed/Epic/5k ANA" "123\tRed/Epic/5k WS" "124\tRed/Epic/4k" "125\tRed/Epic/4k HD" "126\tRed/Epic/3k" "127\tRed/Epic/3k HD" "128\tRed/Epic/2k" "129\tRed/Epic/2k HD" "130\tRed/Epic/2k WS" "131\tRed/Epic/1k HD" "132\tRed/Epic/1k WS" "133\tRed/Epic Dragon/6k Full" "134\tRed/Epic Dragon/6k FF3" "135\tRed/Epic Dragon/5.5k Full" "136\tRed/Epic Dragon/5k Full" "137\tRed/Epic Dragon/4k Full" "138\tRed/Epic Dragon/3k Full" "139\tRed/Epic Dragon/2k Full" "140\tRed/Epic Dragon/1k Full" "141\tSony/DSLR/APS-C A37" "142\tSony/DSLR/APS-C A57" "143\tSony/DSLR/APS-C A58" "144\tSony/DSLR/APS-C A65" "145\tSony/DSLR/APS-C A77" "146\tSony/DSLR/APS-C A3000" "147\tSony/DSLR/Full Frame A99" "148\tSony/DSLR/Mirrorless A7" "149\tSony/DSLR/NEX-6" "150\tSony/DSLR/SLT-A37" "151\tSony/DSLR/SLT-A57" "152\tSony/DSLR/SLT-A99" "153\tSony/DSR-400" "154\tSony/EX1" "155\tSony/F3" "156\tSony/FS100U" "157\tSony/FS700" "158\tSony/F35 1.78" "159\tSony/F35 1.85" "160\tSony/F35 2.39" "161\tSony/F55" "162\tSony/F5" "163\tSony/F65"}}
   filmback 21
@@ -155,14 +154,66 @@ Group {
   inputs 2
   which {{format_controller.which}}
   name Switch5
-  xpos 4585
-  ypos 1916
+  xpos 4580
+  ypos 1910
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant2
+  xpos 5130
+  ypos -251
+ }
+ Crop {
+  box {{parent.referenceSelect} {parent.referenceSelect} {parent.referenceSelect} {parent.referenceSelect}}
+  reformat true
+  crop false
+  name reference_crop1
+  xpos 5130
+  ypos -154
+ }
+ Reformat {
+  type "to box"
+  box_width 512
+  box_height 512
+  box_fixed true
+  resize distort
+  name Reformat_reference1
+  xpos 5130
+  ypos -130
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message reference
+  old_message {{114 101 102 101 114 101 110 99 101}
+    }
+  box {-1.25 205.5 513.25 306.5}
+  xjustify center
+  yjustify center
+  transforms {{0 2}
+    }
+  cursor_position 9
+  font {{ UnDotum : Regular : un-core/UnDotum.ttf : 0 }}
+  global_font_scale 0.9
+  scale {1 1}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{259 282}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 1440 810 0 0 1 1 0 0 0 0}
+    }
+  name reference_text
+  xpos 5130
+  ypos -58
  }
  Input {
   inputs 0
   name ReferenceObject
-  xpos 4978
-  ypos -246
+  xpos 5020
+  ypos -250
   number 3
  }
  Crop {
@@ -170,8 +221,8 @@ Group {
   reformat true
   crop false
   name reference_crop
-  xpos 4978
-  ypos -160
+  xpos 5020
+  ypos -154
  }
  Reformat {
   type "to box"
@@ -180,19 +231,26 @@ Group {
   box_fixed true
   resize distort
   name Reformat_reference
-  xpos 4978
-  ypos -123
+  xpos 5020
+  ypos -130
+ }
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input3]"}}
+  name Switch9
+  xpos 5020
+  ypos -58
  }
  Shuffle {
   alpha white
   name Shuffle3
-  xpos 4980
-  ypos 2
+  xpos 5020
+  ypos 8
  }
  Premult {
   name Premult_reference
-  xpos 4978
-  ypos 90
+  xpos 5020
+  ypos 86
  }
  Transform {
   scale 0.9
@@ -200,16 +258,16 @@ Group {
   filter Mitchell
   shutteroffset centred
   name Transform4
-  xpos 4978
-  ypos 116
+  xpos 5020
+  ypos 110
  }
  Constant {
   inputs 0
   color 1
   format "1024 1024 0 0 1024 1024 1 square_1K"
   name Constant_Background1
-  xpos 2440
-  ypos -303
+  xpos 2490
+  ypos -297
  }
  Reformat {
   type "to box"
@@ -217,144 +275,144 @@ Group {
   box_height 512
   box_fixed true
   name Reformat1
-  xpos 2440
-  ypos -172
+  xpos 2490
+  ypos -178
  }
-set Nee1b4a0 [stack 0]
+set Nbb2bd10 [stack 0]
  Dot {
   name Dot20
   note_font_size 25
-  xpos 2180
-  ypos -174
+  xpos 2188
+  ypos -180
  }
  BlackOutside {
   name BlackOutside1
-  xpos 2152
-  ypos -120
+  xpos 2160
+  ypos -130
  }
  Dilate {
   channels alpha
   size -7
   name Dilate3
-  xpos 2152
-  ypos -74
+  xpos 2160
+  ypos -64
  }
  Dilate {
   channels alpha
   size {{"-parent.BorderScale * 10"}}
   name user_dilate
-  xpos 2152
-  ypos -17
+  xpos 2160
+  ypos -16
  }
  Dot {
   name Dot6
   note_font_size 25
-  xpos 2180
-  ypos 76
+  xpos 2188
+  ypos 84
  }
-push $Nee1b4a0
+push $Nbb2bd10
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge3
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 2440
-  ypos 66
+  xpos 2490
+  ypos 74
  }
  ColorCorrect {
   gain {{parent.BorderColour} {parent.BorderColour} {parent.BorderColour} 1}
   name ColorCorrect_BorderRGB1
-  xpos 2440
-  ypos 172
+  xpos 2490
+  ypos 182
  }
  ColorCorrect {
   channels alpha
   gain {{parent.BorderAlpha} {parent.BorderAlpha} {parent.BorderAlpha} {parent.BorderAlpha}}
   name ColorCorrect_BorderAlpha1
-  xpos 2440
-  ypos 198
+  xpos 2490
+  ypos 200
  }
  Premult {
   name Premult_Border1
-  xpos 2440
+  xpos 2490
   ypos 254
  }
  Dot {
   name Dot7
   note_font_size 25
-  xpos 2468
-  ypos 302
+  xpos 2518
+  ypos 300
  }
-push $Nee1b4a0
+push $Nbb2bd10
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
   name ColorCorrect_BackgroundRGB1
-  xpos 2704
-  ypos -172
+  xpos 2710
+  ypos -178
  }
  Premult {
   name Premult_Background1
-  xpos 2704
-  ypos 195
+  xpos 2710
+  ypos 206
  }
  Merge2 {
   inputs 2
   name Merge_BackgroundBorder1
-  xpos 2704
-  ypos 304
+  xpos 2710
+  ypos 302
  }
  Dot {
   name Dot4
   note_font_size 25
   xpos 2738
-  ypos 435
+  ypos 444
  }
  Dot {
   name Dot15
   note_font_size 25
-  xpos 3155
-  ypos 435
+  xpos 3178
+  ypos 444
  }
-set N19c060e0 [stack 0]
+set Nfb83f60 [stack 0]
  Dot {
   name Dot16
   note_font_size 25
-  xpos 3898
-  ypos 435
+  xpos 3948
+  ypos 444
  }
-set N19ba4900 [stack 0]
+set Nfb88830 [stack 0]
  Dot {
   name Dot18
   note_font_size 25
-  xpos 4760
-  ypos 435
+  xpos 4718
+  ypos 444
  }
  Merge2 {
   inputs 2
   bbox B
   name Merge4
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 4978
-  ypos 497
+  xpos 5020
+  ypos 506
  }
  Dot {
   name Dot8
   note_font_size 25
-  xpos 5006
-  ypos 577
+  xpos 5048
+  ypos 588
  }
-set N19b9a660 [stack 0]
+set Nfba3750 [stack 0]
  Dot {
   name Dot9
   note_font_size 25
-  xpos 4840
-  ypos 577
+  xpos 4828
+  ypos 588
  }
  Card2 {
   translate {{"DiffuseBallBox_Card_horiz.translate + 1 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
@@ -370,24 +428,24 @@ set N19b9a660 [stack 0]
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name refobject_card_horiz
-  xpos 4812
-  ypos 640
+  xpos 4800
+  ypos 638
   disable {{"parent.refObject == 0 ? 1 : 0"}}
  }
  TransformGeo {
   translate {{"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (-1 - offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (-2 - 2*offset.offset) : 0"} 0 0}
   name TransformGeo8
   label "SNAP HORIZONTAL"
-  xpos 4812
-  ypos 685
+  xpos 4800
+  ypos 680
  }
  Dot {
   name Dot5
   note_font_size 25
-  xpos 4840
-  ypos 768
+  xpos 4828
+  ypos 780
  }
-push $N19b9a660
+push $Nfba3750
  Card2 {
   rows 1
   columns 1
@@ -404,36 +462,91 @@ push $N19b9a660
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name refobject_card
-  xpos 4978
-  ypos 633
+  xpos 5020
+  ypos 638
   disable {{"parent.refObject == 1 ? 0 : 1"}}
  }
  TransformGeo {
   translate {0 {"(parent.diffuseBall == 0 && parent.chromeBall == 1) || (parent.diffuseBall == 1 && parent.chromeBall == 0) ? (1 + offset.offset) : parent.diffuseBall == 0 && parent.diffuseBall == 0 ? (2 + 2*offset.offset) : 0"} 0}
   name TransformGeo1
   label "SNAP VERTICAL"
-  xpos 4978
-  ypos 675
+  xpos 5020
+  ypos 680
  }
  Switch {
   inputs 2
   which {{format_controller.which}}
   name Switch3
-  xpos 4978
-  ypos 770
+  xpos 5020
+  ypos 782
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo7
   label GUI
-  xpos 4978
-  ypos 826
+  xpos 5020
+  ypos 824
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 5790
+  ypos -52
+ }
+ CornerPin2D {
+  to1 {0 0}
+  to2 {1080 0}
+  to3 {1080 768}
+  to4 {0 768}
+  invert false
+  from1 {{parent.Corner01} {parent.Corner01}}
+  from2 {{parent.Corner02} {parent.Corner02}}
+  from3 {{parent.Corner03} {parent.Corner03}}
+  from4 {{parent.Corner04} {parent.Corner04}}
+  name ColourChart_CornerPin2
+  xpos 5790
+  ypos 43
+ }
+ Crop {
+  box {0 0 1080 768}
+  reformat true
+  crop false
+  name Crop_ColourChart2
+  xpos 5790
+  ypos 91
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "colour chart"
+  old_message {{99 111 108 111 117 114 32 99 104 97 114 116}
+    }
+  box {-85.5 141 1169.5 651}
+  xjustify center
+  yjustify center
+  transforms {{0 2}
+    }
+  font {{ UnDotum : Regular : un-core/UnDotum.ttf : 0 }}
+  global_font_scale 2.1
+  scale {1 1}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{259 282}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 1440 810 0 0 1 1 0 0 0 0}
+    }
+  name colourChart_text
+  xpos 5790
+  ypos 130
  }
  Input {
   inputs 0
   name ColourChart
-  xpos 5660
-  ypos -44
+  xpos 5680
+  ypos -34
   number 1
  }
  CornerPin2D {
@@ -447,15 +560,22 @@ push $N19b9a660
   from3 {{parent.Corner03} {parent.Corner03}}
   from4 {{parent.Corner04} {parent.Corner04}}
   name ColourChart_CornerPin1
-  xpos 5660
-  ypos 79
+  xpos 5680
+  ypos 28
  }
  Crop {
   box {0 0 1080 768}
   reformat true
   crop false
   name Crop_ColourChart1
-  xpos 5660
+  xpos 5680
+  ypos 76
+ }
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input1]"}}
+  name Switch10
+  xpos 5680
   ypos 130
  }
  Reformat {
@@ -464,8 +584,8 @@ push $N19b9a660
   box_height 768
   box_fixed true
   name Reformat_ColourChart1
-  xpos 5660
-  ypos 226
+  xpos 5680
+  ypos 230
  }
  Transform {
   scale {0.93 0.89}
@@ -473,15 +593,15 @@ push $N19b9a660
   filter Mitchell
   shutteroffset centred
   name Transform2
-  xpos 5660
-  ypos 252
+  xpos 5680
+  ypos 254
  }
  Constant {
   inputs 0
   color 1
   format "1024 1024 0 0 1024 1024 1 square_1K"
   name Constant_Background2
-  xpos 6076
+  xpos 6120
   ypos -105
  }
  Reformat {
@@ -491,130 +611,130 @@ push $N19b9a660
   box_fixed true
   resize distort
   name Reformat3
-  xpos 6076
-  ypos 16
+  xpos 6120
+  ypos 14
  }
  Dot {
   name Dot13
   note_font_size 25
-  xpos 6110
-  ypos 76
+  xpos 6148
+  ypos 84
  }
-set N19cb0f30 [stack 0]
+set Nf8153f0 [stack 0]
  Dot {
   name Dot10
   note_font_size 25
-  xpos 5959
-  ypos 76
+  xpos 5928
+  ypos 84
  }
  BlackOutside {
   name BlackOutside2
-  xpos 5938
-  ypos 112
+  xpos 5900
+  ypos 110
  }
  Dilate {
   channels alpha
   size -15
   name Dilate1
-  xpos 5938
-  ypos 138
+  xpos 5900
+  ypos 128
  }
  Dilate {
   channels alpha
   size {{"-parent.BorderScale * 17"}}
   name user_dilate1
-  xpos 5938
-  ypos 186
+  xpos 5900
+  ypos 176
  }
  Dot {
   name Dot11
   note_font_size 25
-  xpos 5966
-  ypos 224
+  xpos 5928
+  ypos 228
  }
-push $N19cb0f30
+push $Nf8153f0
  Merge2 {
   inputs 2
   operation stencil
   bbox B
   name Merge6
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 6076
-  ypos 214
+  xpos 6120
+  ypos 218
  }
  ColorCorrect {
   gain {{parent.BorderColour} {parent.BorderColour} {parent.BorderColour} 1}
   name ColorCorrect_BorderRGB2
-  xpos 6076
-  ypos 320
+  xpos 6120
+  ypos 326
  }
  ColorCorrect {
   channels alpha
   gain {{parent.BorderAlpha} {parent.BorderAlpha} {parent.BorderAlpha} {parent.BorderAlpha}}
   name ColorCorrect_BorderAlpha2
-  xpos 6076
-  ypos 346
+  xpos 6120
+  ypos 344
  }
  Premult {
   name Premult_Border2
-  xpos 6076
-  ypos 402
+  xpos 6120
+  ypos 398
  }
  Dot {
   name Dot12
   note_font_size 25
-  xpos 6104
-  ypos 479
+  xpos 6148
+  ypos 468
  }
-push $N19cb0f30
+push $Nf8153f0
  ColorCorrect {
   channels rgba
   gain {{parent.BackgroundColour.r} {parent.BackgroundColour.g} {parent.BackgroundColour.b} {parent.BackgroundAlpha}}
   name ColorCorrect_BackgroundRGB2
   xpos 6340
-  ypos 73
+  ypos 62
  }
  Premult {
   name Premult_Background2
   xpos 6340
-  ypos 343
+  ypos 350
  }
  Merge2 {
   inputs 2
   name Merge_BackgroundBorder2
   xpos 6340
-  ypos 481
+  ypos 470
  }
  Dot {
   name Dot19
   note_font_size 25
   xpos 6368
-  ypos 765
+  ypos 756
  }
  Merge2 {
   inputs 2
   bbox B
   name Merge7
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 5660
-  ypos 755
+  xpos 5680
+  ypos 746
  }
  Dot {
   name Dot17
   note_font_size 25
-  xpos 5688
-  ypos 805
+  xpos 5708
+  ypos 804
  }
-set N103a4780 [stack 0]
+set Nf8c7a60 [stack 0]
  Dot {
   name Dot21
   note_font_size 25
-  xpos 5506
-  ypos 805
+  xpos 5488
+  ypos 804
  }
  Card2 {
   translate {{"refobject_card_horiz.translate + 1.2 + offset.offset"} {ChromeBall_Card_horiz.translate} -17}
@@ -631,24 +751,24 @@ set N103a4780 [stack 0]
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name chart_card_horiz
-  xpos 5478
-  ypos 862
+  xpos 5460
+  ypos 854
   disable {{"parent.colourChart == 1 ? 0 : 1"}}
  }
  TransformGeo {
   translate {{"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (-1 - offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (-2 - 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (-3 - 3*offset.offset) : 0"} 0 0}
   name TransformGeo10
   label "SNAP HORIZONTAL"
-  xpos 5481
-  ypos 922
+  xpos 5460
+  ypos 920
  }
  Dot {
   name Dot22
   note_font_size 25
-  xpos 5506
-  ypos 974
+  xpos 5488
+  ypos 972
  }
-push $N103a4780
+push $Nf8c7a60
  Card2 {
   rows 1
   columns 1
@@ -665,30 +785,30 @@ push $N103a4780
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name chart_card
-  xpos 5660
-  ypos 852
+  xpos 5680
+  ypos 854
   disable {{"parent.colourChart == 0 ? 1 : 0"}}
  }
  TransformGeo {
   translate {0 {"(parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 1 && parent.diffuseBall == 1 && parent.refObject == 0) ? (1 + offset.offset) : (parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 1) || (parent.chromeBall == 0 && parent.diffuseBall == 1 && parent.refObject == 0) || (parent.chromeBall == 1 && parent.diffuseBall == 0 && parent.refObject == 0) ? (2 + 2*offset.offset) : parent.chromeBall == 0 && parent.diffuseBall == 0 && parent.refObject == 0 ? (3 + 3*offset.offset) : 0"} 0}
   name TransformGeo9
   label "SNAP VERTICAL"
-  xpos 5660
-  ypos 917
+  xpos 5680
+  ypos 920
  }
  Switch {
   inputs 2
   which {{format_controller.which}}
   name Switch4
-  xpos 5660
-  ypos 976
+  xpos 5680
+  ypos 974
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo4
   label GUI
-  xpos 5660
-  ypos 1076
+  xpos 5680
+  ypos 1088
  }
  Roto {
   inputs 0
@@ -771,21 +891,72 @@ push $N103a4780
   motionblur_shutter_offset_type centred
   source_black_outside true
   name CircleShape1
-  xpos 3683
-  ypos -104
+  xpos 3700
+  ypos -112
  }
  Dot {
   name Dot14
   note_font_size 25
-  xpos 3711
-  ypos 16
+  xpos 3728
+  ypos 12
  }
-set N101bc550 [stack 0]
+set Nfd55260 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant3
+  xpos 4250
+  ypos -273
+ }
+ Crop {
+  box {{parent.DiffuseSelect} {parent.DiffuseSelect} {parent.DiffuseSelect} {parent.DiffuseSelect}}
+  reformat true
+  crop false
+  name Crop_DiffuseBall2
+  xpos 4250
+  ypos -178
+ }
+ Reformat {
+  type "to box"
+  box_width 512
+  box_height 512
+  box_fixed true
+  name Reformat_DiffuseBall2
+  xpos 4250
+  ypos -154
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "diffuse ball"
+  old_message {{100 105 102 102 117 115 101 32 98 97 108 108}
+    }
+  box {-1.25 205.5 513.25 306.5}
+  xjustify center
+  yjustify center
+  transforms {{0 2}
+    }
+  cursor_position 12
+  font {{ UnDotum : Regular : un-core/UnDotum.ttf : 0 }}
+  global_font_scale 0.9
+  scale {1 1}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{259 282}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 1440 810 0 0 1 1 0 0 0 0}
+    }
+  name diffuseBall_text
+  xpos 4250
+  ypos -106
+ }
  Input {
   inputs 0
   name DiffuseBall
-  xpos 4139
-  ypos -270
+  xpos 4140
+  ypos -274
   number 2
  }
  Crop {
@@ -793,8 +964,8 @@ set N101bc550 [stack 0]
   reformat true
   crop false
   name Crop_DiffuseBall1
-  xpos 4139
-  ypos -158
+  xpos 4140
+  ypos -226
  }
  Reformat {
   type "to box"
@@ -802,21 +973,28 @@ set N101bc550 [stack 0]
   box_height 512
   box_fixed true
   name Reformat_DiffuseBall1
-  xpos 4139
-  ypos -61
+  xpos 4140
+  ypos -202
+ }
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input2]"}}
+  name Switch8
+  xpos 4140
+  ypos -106
  }
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
   name CopyAlpha_DifusseBall1
-  xpos 4139
-  ypos 12
+  xpos 4140
+  ypos 8
  }
  Premult {
   name Premult_DiffuseBall1
-  xpos 4139
-  ypos 50
+  xpos 4140
+  ypos 62
  }
  Transform {
   scale 0.9
@@ -824,32 +1002,32 @@ set N101bc550 [stack 0]
   filter Mitchell
   shutteroffset centred
   name Transform3
-  xpos 4139
-  ypos 81
+  xpos 4140
+  ypos 86
  }
-push $N19ba4900
+push $Nfb88830
  Merge2 {
   inputs 2
   bbox B
   name Merge5
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 4126
+  xpos 4140
   ypos 530
  }
  Dot {
   name Dot1
   note_font_size 25
-  xpos 4154
-  ypos 580
+  xpos 4168
+  ypos 588
  }
-set N1026d7f0 [stack 0]
+set Nfe064d0 [stack 0]
  Dot {
   name Dot2
   note_font_size 25
-  xpos 3988
-  ypos 580
+  xpos 3948
+  ypos 588
  }
  Card2 {
   translate {{"ChromeBall_Card_horiz.translate + 1 +  offset.offset"} {ChromeBall_Card_horiz.translate} -17}
@@ -865,24 +1043,24 @@ set N1026d7f0 [stack 0]
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name DiffuseBallBox_Card_horiz
-  xpos 3960
-  ypos 636
+  xpos 3920
+  ypos 638
   disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
  }
  TransformGeo {
   translate {{"parent.chromeBall == 0 ? (-1 - offset.offset) : 0"} 0 0}
   name TransformGeo6
   label "SNAP HORIZONTAL"
-  xpos 3960
-  ypos 688
+  xpos 3920
+  ypos 680
  }
  Dot {
   name Dot3
   note_font_size 25
-  xpos 3988
-  ypos 776
+  xpos 3948
+  ypos 780
  }
-push $N1026d7f0
+push $Nfe064d0
  Card2 {
   rows 1
   columns 1
@@ -899,45 +1077,97 @@ push $N1026d7f0
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name DiffuseBallBox_Card
-  xpos 4126
-  ypos 627
+  xpos 4140
+  ypos 638
   disable {{"parent.diffuseBall == 1 ? 0 : 1"}}
  }
  TransformGeo {
   translate {0 {"parent.chromeBall == 0 ? (1 + offset.offset) : 0"} 0}
   name TransformGeo5
   label "SNAP VERTICAL"
-  xpos 4126
-  ypos 686
+  xpos 4140
+  ypos 680
  }
  Switch {
   inputs 2
   which {{format_controller.which}}
   name Switch2
-  xpos 4126
-  ypos 778
+  xpos 4140
+  ypos 782
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo3
   label GUI
-  xpos 4126
-  ypos 836
+  xpos 4140
+  ypos 848
  }
-push $N101bc550
+push $Nfd55260
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant4
+  xpos 3480
+  ypos -332
+ }
+ Crop {
+  box {{parent.ChromeSelect} {parent.ChromeSelect} {parent.ChromeSelect} {parent.ChromeSelect}}
+  reformat true
+  crop false
+  name Crop_ChromeBall2
+  xpos 3480
+  ypos -226
+ }
+ Reformat {
+  type "to box"
+  box_width 512
+  box_height 512
+  box_fixed true
+  resize distort
+  name Reformat_ChromeBall2
+  xpos 3480
+  ypos -202
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "chrome ball"
+  old_message {{99 104 114 111 109 101 32 98 97 108 108}
+    }
+  box {-1.25 205.5 513.25 306.5}
+  xjustify center
+  yjustify center
+  transforms {{0 2}
+    }
+  cursor_position 5
+  font {{ UnDotum : Regular : un-core/UnDotum.ttf : 0 }}
+  global_font_scale 0.9
+  scale {1 1}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{259 282}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 1440 810 0 0 1 1 0 0 0 0}
+    }
+  name chromeBall_text
+  xpos 3480
+  ypos -178
+ }
  Input {
   inputs 0
   name ChromeBall
-  xpos 3344
-  ypos -324
+  xpos 3370
+  ypos -346
  }
  Crop {
   box {{parent.ChromeSelect} {parent.ChromeSelect} {parent.ChromeSelect} {parent.ChromeSelect}}
   reformat true
   crop false
   name Crop_ChromeBall1
-  xpos 3344
-  ypos -250
+  xpos 3370
+  ypos -298
  }
  Reformat {
   type "to box"
@@ -946,21 +1176,28 @@ push $N101bc550
   box_fixed true
   resize distort
   name Reformat_ChromeBall1
-  xpos 3344
-  ypos -180
+  xpos 3370
+  ypos -250
+ }
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input0]"}}
+  name Switch7
+  xpos 3370
+  ypos -178
  }
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
   name CopyAlpha_ChromeBall1
-  xpos 3340
-  ypos 12
+  xpos 3370
+  ypos 8
  }
  Premult {
   name Premult_ChromeBall1
-  xpos 3340
-  ypos 82
+  xpos 3370
+  ypos 86
  }
  Transform {
   scale 0.9
@@ -968,21 +1205,21 @@ push $N101bc550
   filter Mitchell
   shutteroffset centred
   name Transform1
-  xpos 3340
-  ypos 133
+  xpos 3370
+  ypos 134
  }
-push $N19c060e0
+push $Nfb83f60
  Merge2 {
   inputs 2
   bbox B
   name Merge1
   label "bbox: \[value bbox]\nmix: \[value mix]"
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_color 0xff00ff
-  xpos 3327
-  ypos 538
+  xpos 3370
+  ypos 530
  }
-set N1de3b890 [stack 0]
+set Nff048d0 [stack 0]
  Card2 {
   translate {0.16 1.81 -17}
   control_points {3 3 3 6 
@@ -997,11 +1234,11 @@ set N1de3b890 [stack 0]
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name ChromeBall_Card_horiz
-  xpos 3156
-  ypos 629
+  xpos 3150
+  ypos 638
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
-push $N1de3b890
+push $Nff048d0
  Card2 {
   rows 1
   columns 1
@@ -1018,58 +1255,58 @@ push $N1de3b890
 1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
   name ChromeBall_Card
-  xpos 3327
-  ypos 623
+  xpos 3370
+  ypos 614
   disable {{"parent.chromeBall == 1 ? 0 : 1"}}
  }
  Switch {
   inputs 2
   which {{format_controller.which}}
   name Switch1
-  xpos 3327
-  ypos 684
+  xpos 3370
+  ypos 686
  }
  TransformGeo {
   translate {{parent.OverlayPosition.x} {parent.OverlayPosition.y} 0}
   name TransformGeo2
   label GUI
-  xpos 3327
-  ypos 735
+  xpos 3370
+  ypos 728
  }
  Scene {
   inputs 4
   name Scene3
-  xpos 4299
-  ypos 1424
+  xpos 4260
+  ypos 1434
  }
  Dot {
   name Dot23
   note_font_size 25
-  xpos 4317
-  ypos 1591
+  xpos 4278
+  ypos 1596
  }
-set N1deee720 [stack 0]
+set Nffb7580 [stack 0]
  TransformGeo {
   uniform_scale {{parent.scale}}
   pivot {{"parent.position == 2 ? ChromeBall_Card_horiz.translate + parent.OverlayPosition.x  - 0.5 : ChromeBall_Card_horiz.translate + parent.OverlayPosition.x - 0.5"} {"parent.position == 3 ? ChromeBall_Card_horiz.translate - 0.5 + parent.OverlayPosition.y : ChromeBall_Card_horiz.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
   name uniform_scale_horizonal
-  xpos 4116
-  ypos 1702
+  xpos 4140
+  ypos 1694
  }
-push $N1deee720
+push $Nffb7580
  TransformGeo {
   uniform_scale {{parent.scale}}
   pivot {{"parent.position == 0 ? ChromeBall_Card.translate - 0.5 + parent.OverlayPosition.x : ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.x"} {"ChromeBall_Card.translate + 0.5 + parent.OverlayPosition.y"} {ChromeBall_Card.translate}}
   name uniform_scale_vertical
-  xpos 4289
-  ypos 1672
+  xpos 4250
+  ypos 1670
  }
  Switch {
   inputs 2
   which {{format_controller.which}}
   name Switch6
-  xpos 4289
-  ypos 1702
+  xpos 4250
+  ypos 1694
  }
 push 0
  ScanlineRender {
@@ -1081,39 +1318,39 @@ push 0
   shutteroffset centred
   motion_vectors_type distance
   name ScanlineRender3
-  xpos 4286
-  ypos 1916
+  xpos 4250
+  ypos 1910
  }
  Remove {
   operation keep
   channels rgba
   name Remove1
-  xpos 4289
-  ypos 1996
+  xpos 4250
+  ypos 2006
  }
  Reformat {
   black_outside true
   name Reformat2
-  xpos 4286
-  ypos 2076
+  xpos 4250
+  ypos 2078
  }
  Output {
   name Output1
-  xpos 4286
-  ypos 2217
+  xpos 4250
+  ypos 2222
  }
  Switch {
   inputs 0
   which {{"parent.position == 0 ? 0 : parent.position == 1 ? 0 : 1"}}
   name format_controller
-  xpos 4236
-  ypos -804
+  xpos 4250
+  ypos -802
  }
  NoOp {
   inputs 0
   name offset
-  xpos 4581
-  ypos -832
+  xpos 4580
+  ypos -826
   hide_input true
   addUserKnob {20 User}
   addUserKnob {7 offset}

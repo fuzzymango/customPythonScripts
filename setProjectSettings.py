@@ -1,6 +1,6 @@
 # --------------------------------------------------------------
 #  setProjectSettings.py
-#  Version: 0.2.1
+#  Version: 0.2.2
 #  Last Updated: March 10th 2020
 #  Tested on Nuke 11
 # --------------------------------------------------------------
@@ -36,24 +36,26 @@ def projectSettings():
 			current_proj_format = nuke.knob('root.format')
 
 			# create format string
-			#new_proj_format = str(res_width) + ' ' + str(res_height) + ' 0 0 ' + str(res_width) + ' ' + str(res_height) + str(pixel_aspect)
 			new_proj_format = '%s %s 0 0 %s %s %s' % (res_width, res_height, res_width, res_height, pixel_aspect)
 
 			# get a list of all currently loaded formats
-			format_list = []
+			nameless_format_list = []
+			named_format_list = []
 			scriptFormats = nuke.formats()
 			for f in scriptFormats:
-			    new = '%s %s 0 0 %s %s %s' % (f.width(), f.height(), f.width(), f.height(), f.pixelAspect())
-			    format_list.append(new)
+			    new_nameless = '%s %s 0 0 %s %s %s' % (f.width(), f.height(), f.width(), f.height(), f.pixelAspect())
+			    new_named = '%s %s 0 0 %s %s %s %s' % (f.width(), f.height(), f.width(), f.height(), f.pixelAspect(), f.name())
+			    nameless_format_list.append(new_nameless)
+			    named_format_list.append(new_named)
 
 
 			# check to see if the new project format matches a current project format
-			for i in format_list:
+			for i in nameless_format_list:
 				print '\ni: %s \nnew format: %s\n' % (i, new_proj_format)
 				# if there's a match, set the project format and display the completion message
 				# if i = new project format and i does not contain any letters
-				
-				if i == new_proj_format and re.search('[a-zA-Z]', i):
+				print 'regex: %s\ni: %s' % (re.search('[a-zA-Z]', i), i)
+				if i == new_proj_format and re.search('[a-zA-Z]', named_format_list[named_format_list.index(i)]):
 						# confirm with the user that all the settings are correct
 						askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
 						if nuke.ask(askMessage):

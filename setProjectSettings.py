@@ -1,6 +1,6 @@
 # --------------------------------------------------------------
 #  setProjectSettings.py
-#  Version: 0.2.0
+#  Version: 0.2.1
 #  Last Updated: March 10th 2020
 #  Tested on Nuke 11
 # --------------------------------------------------------------
@@ -52,7 +52,8 @@ def projectSettings():
 				print '\ni: %s \nnew format: %s\n' % (i, new_proj_format)
 				# if there's a match, set the project format and display the completion message
 				# if i = new project format and i does not contain any letters
-				if i == new_proj_format:
+				
+				if i == new_proj_format and re.search('[a-zA-Z]', i):
 						# confirm with the user that all the settings are correct
 						askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
 						if nuke.ask(askMessage):
@@ -68,19 +69,23 @@ def projectSettings():
 							return
 
 
-	# if there is not a match, request the user to enter a name for the new format
-		#else: 
+			# if there is not a match, request the user to enter a name for the new format
 			# prompt user to enter name of new format and save that as a string called txt
 			messageText = 'New format detected! Enter a name for the new format'
 			txt = nuke.getInput(messageText, 'new_format')
 
 			# check to see if the user left the field blank
 			if txt is '':
-				nuke.message('give your format a name')
+				message = nuke.message('give your format a name')
+
 				return
 			else: 
-				# append the name of the new project format 
-				new_proj_format = new_proj_format + ' ' + txt
+				# append the name of the new project format
+				try:
+					new_proj_format = new_proj_format + ' ' + txt
+				# catch a type error that throws when the user cancels the format name box
+				except TypeError as e:
+					return
 
 				# confirm with the user that all the settings are correct
 				askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)

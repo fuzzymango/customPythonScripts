@@ -1,12 +1,12 @@
 # --------------------------------------------------------------
 #  setProjectSettings.py
-#  Version: 0.1.1
+#  Version: 0.2.0
 #  Last Updated: March 10th 2020
 #  Tested on Nuke 11
 # --------------------------------------------------------------
 import nuke 
 import nukescripts
-
+import re
 
 def projectSettings():
 	# get selected node(s)
@@ -49,37 +49,10 @@ def projectSettings():
 
 			# check to see if the new project format matches a current project format
 			for i in format_list:
-				print '\n%s \n%s\n' % (i, new_proj_format)
+				print '\ni: %s \nnew format: %s\n' % (i, new_proj_format)
 				# if there's a match, set the project format and display the completion message
+				# if i = new project format and i does not contain any letters
 				if i == new_proj_format:
-					# set the project format to i
-					nuke.knob('root.format', i)
-
-					# set the frist/last frame
-					nuke.knob('root.first_frame', str(fr_first))
-					nuke.knob('root.last_frame', str(fr_last))
-
-					# set pixel aspect
-
-
-					# display to the user how the format will be set
-					nuke.message('frame range: ' + str(fr_first) + '-' + str(fr_last) + '\nFull size format: ' + new_proj_format)
-					break
-
-			# if there is not a match, request the user to enter a name for the new format
-				else: 
-					# prompt user to enter name of new format and save that as a string called txt
-					messageText = 'New format detected! Enter a name for the new format'
-					txt = nuke.getInput(messageText, 'new_format')
-
-					# check to see if the user left the field blank
-					if txt is '':
-						nuke.message('give your format a name')
-						break
-					else: 
-						# append the name of the new project format 
-						new_proj_format = new_proj_format + ' ' + txt
-
 						# confirm with the user that all the settings are correct
 						askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
 						if nuke.ask(askMessage):
@@ -89,11 +62,40 @@ def projectSettings():
 							# set the frist/last frame
 							nuke.knob('root.first_frame', str(fr_first))
 							nuke.knob('root.last_frame', str(fr_last))
-
-							break
-						# if the user cancels, exit the script
+							
+							return
 						else:
-							break
+							return
+
+
+	# if there is not a match, request the user to enter a name for the new format
+		#else: 
+			# prompt user to enter name of new format and save that as a string called txt
+			messageText = 'New format detected! Enter a name for the new format'
+			txt = nuke.getInput(messageText, 'new_format')
+
+			# check to see if the user left the field blank
+			if txt is '':
+				nuke.message('give your format a name')
+				return
+			else: 
+				# append the name of the new project format 
+				new_proj_format = new_proj_format + ' ' + txt
+
+				# confirm with the user that all the settings are correct
+				askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
+				if nuke.ask(askMessage):
+					# set the project format to the new project format
+					nuke.knob('root.format', new_proj_format)
+
+					# set the frist/last frame
+					nuke.knob('root.first_frame', str(fr_first))
+					nuke.knob('root.last_frame', str(fr_last))
+
+					return
+				# if the user cancels, exit the script
+				else:
+					return
 
 			# wrong node class selected
 			nuke.message('Wrong node class selected')

@@ -1,6 +1,6 @@
 # --------------------------------------------------------------
 #  setProjectSettings.py
-#  Version: 0.2.3
+#  Version: 0.3.0
 #  Last Updated: March 14th 2020
 #  Tested on Windows Nuke 11.2v4
 # --------------------------------------------------------------
@@ -26,8 +26,8 @@ def projectSettings():
             read = n[0]
 
             # get the frame range
-            fr_first = str(read['first'].getValue())
-            fr_last = str(read['last'].getValue())
+            fr_first = str(int(read['first'].getValue()))
+            fr_last = str(int(read['last'].getValue()))
 
             # get the resolution 
             res_width = read.width()
@@ -76,7 +76,7 @@ def projectSettings():
                     #print '\nnew_proj_format: %s\nnamless0%s: %s\nnamed0%s: %s\nregex: %s' % (new_proj_format, i, nameless_format_list[i], i, named_format_list[i], re.search('None$', named_format_list[i]))
 
                     # confirm with the user that all the settings are correct
-                    askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
+                    askMessage = 'frame range: <b>%s-%s</b>\n\nfull size format: <b>%sx%s %s</b>\n\nConfirm?' % (fr_first, fr_last, res_width, res_height, pixel_aspect)
                     if nuke.ask(askMessage):
 
                         # set the project format to the new project format
@@ -113,7 +113,7 @@ def projectSettings():
                     return
 
                 # confirm with the user that all the settings are correct
-                askMessage = 'frame range: %s - %s\nFull size format: %s\nConfirm?' % (fr_first, fr_last, new_proj_format)
+                askMessage = 'frame range: <b>%s-%s</b>\n\nfull size format: <b>%sx%s %s</b>\n\nConfirm?' % (fr_first, fr_last, res_width, res_height, pixel_aspect)
                 if nuke.ask(askMessage):
                     # set the project format to the new project format
                     nuke.knob('root.format', new_proj_format)
@@ -132,8 +132,9 @@ def projectSettings():
         # -----------------------------------------------------------------------------------------------------------------------------------------
         # CATCH THE USER SELECTING THE WRONG INPUTS
         # -----------------------------------------------------------------------------------------------------------------------------------------
-            # wrong node class selected
-            nuke.message('Wrong node class selected')
+        # wrong node class selected
+        else: 
+            nuke.message('You must select a read node')
     else: 
         # too many nodes selected 
         nuke.message('Select only one Read node')
